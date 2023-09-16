@@ -2,23 +2,29 @@ extends Node2D
 class_name Inventory
 
 
-func push_item(item: Node2D) -> bool:
+func push_item(item: Node2D):
 	for placement_position in get_children():
 		if placement_position.is_reserved:
 			continue
 		
 		placement_position.add_item(item)
-		return true
+		return
+
+
+func can_push_item() -> bool:
+	for placement_position in get_children():
+		if not placement_position.is_reserved:
+			return true
 	
 	return false
 
 
-func get_items() -> Array:
-	return get_children()
-
-
 func has_items() -> bool:
-	return get_items().size() > 0
+	for placement_position in get_children():
+		if placement_position.is_reserved:
+			return true
+
+	return false
 
 
 func pop_item() -> Node2D:

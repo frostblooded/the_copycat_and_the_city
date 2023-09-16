@@ -12,14 +12,12 @@ func _on_interact():
 func remove_item():
 	assert($PlacementPosition.is_reserved)
 
-	var item: Node2D = $PlacementPosition.remove_item()
-
 	var player: Player = get_tree().root.get_node("Main").get_node("Player")
 	var inventory: Inventory = player.get_inventory()
-	var succeeded_adding_item_to_player: bool = inventory.push_item(item)
-
-	if not succeeded_adding_item_to_player:
-		$PlacementPosition.add_item(item)
+	
+	if inventory.can_push_item():
+		var item: Node2D = $PlacementPosition.remove_item()
+		inventory.push_item(item)
 
 
 func add_item():

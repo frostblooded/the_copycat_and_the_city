@@ -20,6 +20,16 @@ _global_script_classes=[ {
 "path": "res://scripts/inventory.gd"
 }, {
 "base": "Node2D",
+"class": "Order",
+"language": "GDScript",
+"path": "res://scripts/order.gd"
+}, {
+"base": "Node2D",
+"class": "OrderManager",
+"language": "GDScript",
+"path": "res://scripts/order_manager.gd"
+}, {
+"base": "Node2D",
 "class": "PlacementPosition",
 "language": "GDScript",
 "path": "res://scripts/placement_position.gd"
@@ -37,6 +47,8 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "InteractableArea": "",
 "Inventory": "",
+"Order": "",
+"OrderManager": "",
 "PlacementPosition": "",
 "Player": "",
 "TableInteractableArea": ""

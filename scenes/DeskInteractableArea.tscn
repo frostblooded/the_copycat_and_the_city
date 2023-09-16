@@ -1,20 +1,25 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://sprites/table_front.png" type="Texture" id=1]
 [ext_resource path="res://scenes/InteractableArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/desk_interactable_area.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Pile.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Order.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 39.5, 46.8202 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 41.1476, 14.5794 )
 
-[node name="DeskInteractableArea" instance=ExtResource( 2 )]
+[node name="DeskInteractableArea" groups=["desks"] instance=ExtResource( 2 )]
 scale = Vector2( 1.2815, 1.2815 )
 script = ExtResource( 3 )
 pile_scene = ExtResource( 4 )
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2( -1.5, 44 )
+scale = Vector2( 1.45064, 1 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 scale = Vector2( 1.8, 1.8 )
@@ -26,3 +31,6 @@ texture = ExtResource( 1 )
 position = Vector2( -0.999999, -1.5 )
 scale = Vector2( 0.972111, 2.36635 )
 shape = SubResource( 1 )
+
+[node name="Order" parent="." index="3" instance=ExtResource( 5 )]
+position = Vector2( 0, -8.58369 )
