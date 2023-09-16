@@ -13,8 +13,10 @@ var current_pile_color = -1
 var timer = Timer.new()
 var is_ready = false
 
+onready var inventory = get_node("Inventory")
+
 func is_empty():
-	return current_pile_color == -1
+	return inventory.get_child_count() == 0
 
 func _ready():
 	if current_paper == -1:
@@ -23,23 +25,38 @@ func _ready():
 	add_child(timer)
 
 func _on_interact():
+	var player_inventory = Utils.get_player(get_tree()).get_inventory()
 	if is_empty():
-		var player: Player = Utils.get_player(get_tree())
-		var item = player.get_inventory().pop_item()
+		if not player_inventory.has_items():
+			return
+		var item = player_inventory.pop_item()
 		var pile_color = 0
-		var took_pile = take_pile(pile_color, 1)
+		var took_pile = take_pile(item)
 		if took_pile:
 			emit_signal("pile_added", pile_color)
 		else:
-			player.get_inventory().push_item(item)
-			
+			player_inventory.push_item(item)
 	else:
-		pass # TODO: return pile to player
+		if is_ready:
+			var item = inventory.get_child(0)
+			inventory.remove_child(item)
+			if player_inventory.push_item(item):
+				var pile_color = 0
+				emit_signal("pile_taken", pile_color)
+			else:
+				inventory.add_child(item)
 
 
-func take_pile(pile_color, paper_count): 
+func take_pile(item): 
+	# TODO: fix this
+	var pile_color = 0
+	var paper_count = 1
+
 	if current_paper < paper_count:
 		return false
+
+	
+	inventory.add_child(item)
 
 	current_paper -= paper_count
 	current_pile_color = pile_color
@@ -47,7 +64,9 @@ func take_pile(pile_color, paper_count):
 	timer.wait_time = time_per_paper * paper_count
 	timer.one_shot = true
 	timer.start()
+	is_ready = false
 	return true
 
 func _on_timer_expire():
+	is_ready = true
 	emit_signal("pile_completed", current_pile_color)
