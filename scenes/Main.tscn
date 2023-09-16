@@ -7,7 +7,6 @@
 [ext_resource path="res://scenes/TableInteractableArea.tscn" type="PackedScene" id=5]
 
 [node name="Main" type="Node2D"]
-position = Vector2( 0, 1 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
