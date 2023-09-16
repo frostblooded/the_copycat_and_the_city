@@ -1,1 +1,1 @@
-enum {Red, Green, Blue}
+enum PileColor {Red, Green, Blue}
