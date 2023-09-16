@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/steps-indoor-1-6723.mp3-c3fdca0ceb528b93663c6dba74305dfd.mp3str"
+
+[deps]
+
+source_file="res://sounds/steps-indoor-1-6723.mp3"
+dest_files=[ "res://.import/steps-indoor-1-6723.mp3-c3fdca0ceb528b93663c6dba74305dfd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
