@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cute-music-26476.mp3-468fa32c6197017352d5db8ed57aa110.mp3str"
+
+[deps]
+
+source_file="res://sounds/cute-music-26476.mp3"
+dest_files=[ "res://.import/cute-music-26476.mp3-468fa32c6197017352d5db8ed57aa110.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

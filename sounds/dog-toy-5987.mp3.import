@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dog-toy-5987.mp3-62b25f68d5280133011463caa5e36d05.mp3str"
+
+[deps]
+
+source_file="res://sounds/dog-toy-5987.mp3"
+dest_files=[ "res://.import/dog-toy-5987.mp3-62b25f68d5280133011463caa5e36d05.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
