@@ -39,16 +39,17 @@ rect_scale = Vector2( 1.0124, 0.949655 )
 texture = ExtResource( 4 )
 
 [node name="Inventory" type="Node2D" parent="."]
-position = Vector2( 0, 40 )
+position = Vector2( 0, 24 )
 script = ExtResource( 3 )
 
 [node name="PlacementPosition" type="Node2D" parent="Inventory"]
+rotation = 0.00873974
 script = ExtResource( 5 )
 
 [node name="PlacementPosition2" type="Node2D" parent="Inventory"]
-position = Vector2( 0, -16 )
+position = Vector2( 0, -24 )
 script = ExtResource( 5 )
 
 [node name="PlacementPosition3" type="Node2D" parent="Inventory"]
-position = Vector2( 0, -32 )
+position = Vector2( 0, -48 )
 script = ExtResource( 5 )
