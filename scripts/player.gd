@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Player
 
 export (int) var speed: int = 200
 
@@ -44,3 +45,7 @@ func _input(event):
 func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
+
+
+func get_inventory() -> Inventory:
+	return $Inventory as Inventory

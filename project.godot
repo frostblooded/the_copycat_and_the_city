@@ -18,10 +18,22 @@ _global_script_classes=[ {
 "class": "Inventory",
 "language": "GDScript",
 "path": "res://scripts/inventory.gd"
+}, {
+"base": "Node2D",
+"class": "PlacementPosition",
+"language": "GDScript",
+"path": "res://scripts/placement_position.gd"
+}, {
+"base": "InteractableArea",
+"class": "TableInteractableArea",
+"language": "GDScript",
+"path": "res://scripts/table_interactable_area.gd"
 } ]
 _global_script_class_icons={
 "InteractableArea": "",
-"Inventory": ""
+"Inventory": "",
+"PlacementPosition": "",
+"TableInteractableArea": ""
 }
 
 [application]

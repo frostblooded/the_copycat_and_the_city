@@ -1,0 +1,1 @@
+enum PileColor {Red, Green, Blue}

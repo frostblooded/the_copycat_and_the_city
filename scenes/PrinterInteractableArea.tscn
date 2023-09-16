@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/InteractableArea.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/printer.png" type="Texture" id=2]
+[ext_resource path="res://scripts/printer_interactable_area.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14, 34 )
+
+[node name="PrinterInteractableArea" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+max_paper = 10
+current_paper = -1
+time_per_paper = 1.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( -1, -1 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+texture = ExtResource( 2 )
+
+[connection signal="pile_completed" from="." to="." method="_on_PrinterInteractableArea_pile_completed"]
