@@ -1,0 +1,1 @@
+enum {Red, Green, Blue}
