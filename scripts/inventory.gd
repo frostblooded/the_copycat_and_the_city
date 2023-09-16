@@ -2,12 +2,13 @@ extends Node2D
 class_name Inventory
 
 
-func add(item: Node2D):
-	add_child(item)
-
-
-func remove(item: Node2D):
-	remove_child(item)
+func push_item(item: Node2D):
+	for placement_position in get_children():
+		if placement_position.is_reserved:
+			continue
+		
+		placement_position.add_item(item)
+		return
 
 
 func get_items() -> Array:
@@ -19,7 +20,12 @@ func has_items() -> bool:
 
 
 func pop_item() -> Node2D:
-	var items: Array = get_children()
-	var last_item: Node2D = items[items.size() - 1]
-	remove(last_item)
-	return last_item
+	var placement_positions: Array = get_children()
+
+	for i in range(placement_positions.size() - 1, -1, -1):
+		var placement_position: PlacementPosition = placement_positions[i]
+
+		if placement_position.is_reserved:
+			return placement_position.remove_item()
+	
+	return null
