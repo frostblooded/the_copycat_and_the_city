@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "InteractableArea",
+"language": "GDScript",
+"path": "res://scripts/interactable_area.gd"
+} ]
+_global_script_class_icons={
+"InteractableArea": ""
+}
+
 [application]
 
 config/name="The Copycat and the City"
