@@ -6,14 +6,10 @@
 [ext_resource path="res://scenes/DeskInteractableArea.tscn" type="PackedScene" id=4]
 
 [node name="Main" type="Node2D"]
-<<<<<<< HEAD
-position = Vector2( 0, 1 )
-=======
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
->>>>>>> e0766e30ae34e08ba9e40c62cdb3fbee698d2cf0
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 385, 367 )
