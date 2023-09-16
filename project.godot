@@ -33,13 +33,19 @@ _global_script_classes=[ {
 "class": "TableInteractableArea",
 "language": "GDScript",
 "path": "res://scripts/table_interactable_area.gd"
+}, {
+"base": "Reference",
+"class": "Utils",
+"language": "GDScript",
+"path": "res://scripts/utils.gd"
 } ]
 _global_script_class_icons={
 "InteractableArea": "",
 "Inventory": "",
 "PlacementPosition": "",
 "Player": "",
-"TableInteractableArea": ""
+"TableInteractableArea": "",
+"Utils": ""
 }
 
 [application]
@@ -66,6 +72,12 @@ singletons=[  ]
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[importer_defaults]
+
+texture={
+"flags/filter": false
+}
 
 [input]
 
