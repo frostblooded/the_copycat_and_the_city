@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "InteractableArea",
 "language": "GDScript",
 "path": "res://scripts/interactable_area.gd"
+}, {
+"base": "Node2D",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://scripts/inventory.gd"
 } ]
 _global_script_class_icons={
-"InteractableArea": ""
+"InteractableArea": "",
+"Inventory": ""
 }
 
 [application]
