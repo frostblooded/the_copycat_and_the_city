@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://sprites/black.png" type="Texture" id=1]
 [ext_resource path="res://scenes/InteractableArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/desk_interactable_area.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Pile.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 90.525, 15.767 )
 
 [node name="DeskInteractableArea" instance=ExtResource( 2 )]
 script = ExtResource( 3 )
+pile_scene = ExtResource( 4 )
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2( 0, 48 )

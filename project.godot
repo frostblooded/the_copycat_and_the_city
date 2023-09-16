@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Inventory",
 "language": "GDScript",
 "path": "res://scripts/inventory.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scripts/player.gd"
 } ]
 _global_script_class_icons={
 "InteractableArea": "",
-"Inventory": ""
+"Inventory": "",
+"Player": ""
 }
 
 [application]
