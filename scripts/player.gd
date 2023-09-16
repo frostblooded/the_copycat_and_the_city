@@ -5,21 +5,6 @@ export (int) var speed: int = 200
 var velocity: Vector2 = Vector2()
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 func get_input():
 	velocity = Vector2()
 
@@ -33,6 +18,15 @@ func get_input():
 		velocity.y -= 1
 
 	velocity = velocity.normalized() * speed
+
+
+func _input(event):
+	if event.is_action_pressed("interact"):
+		var overlapping_areas: Array = $Area2D.get_overlapping_areas()
+
+		for area in overlapping_areas:
+			if area is InteractableArea:
+				area._on_interact()
 
 
 func _physics_process(_delta):
