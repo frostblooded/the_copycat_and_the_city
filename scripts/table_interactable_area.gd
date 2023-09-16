@@ -4,7 +4,26 @@ class_name TableInteractableArea
 
 func _on_interact():
 	if $PlacementPosition.is_reserved:
-		return
+		remove_item()
+	else:
+		add_item()
+
+
+func remove_item():
+	assert($PlacementPosition.is_reserved)
+
+	var item: Node2D = $PlacementPosition.remove_item()
+
+	var player: Player = get_tree().root.get_node("Main").get_node("Player")
+	var inventory: Inventory = player.get_inventory()
+	var succeeded_adding_item_to_player: bool = inventory.push_item(item)
+
+	if not succeeded_adding_item_to_player:
+		$PlacementPosition.add_item(item)
+
+
+func add_item():
+	assert(!$PlacementPosition.is_reserved)
 
 	var player: Player = get_tree().root.get_node("Main").get_node("Player")
 	var inventory: Inventory = player.get_inventory()
