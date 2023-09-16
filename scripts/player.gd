@@ -20,6 +20,18 @@ func get_input():
 	velocity = velocity.normalized() * speed
 
 
+func _process(_delta):
+	var overlapping_areas: Array = $Area2D.get_overlapping_areas()
+	var is_overlapping_interactable_area: bool = false
+
+	for area in overlapping_areas:
+		if area is InteractableArea:
+			is_overlapping_interactable_area = true
+			break
+	
+	$InteractUI.set_visible(is_overlapping_interactable_area)
+
+
 func _input(event):
 	if event.is_action_pressed("interact"):
 		var overlapping_areas: Array = $Area2D.get_overlapping_areas()
