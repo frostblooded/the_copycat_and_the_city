@@ -1,13 +1,19 @@
 [gd_scene format=2]
 
 [node name="HUD" type="MarginContainer"]
-margin_right = 64.0
-margin_bottom = 25.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 248.0
+margin_bottom = 19.0
 
 [node name="ScoreLabel" type="Label" parent="."]
-margin_top = 5.0
-margin_right = 64.0
-margin_bottom = 19.0
+margin_right = 243.0
+margin_bottom = 14.0
 text = "Score: 0"
-align = 1
 valign = 1
+
+[node name="TimeLeftLabel" type="Label" parent="."]
+margin_right = 243.0
+margin_bottom = 14.0
+text = "Time left: 60"
+align = 2

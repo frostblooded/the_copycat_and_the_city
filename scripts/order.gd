@@ -22,13 +22,16 @@ func start():
 
 
 func _on_Timer_timeout():
-	get_tree().quit()
-	print("Order expired! Game over!")
+	cancel_order()
+
+
+func cancel_order():
+	is_running = false
+	$Timer.stop()
 
 
 func complete():
-	is_running = false
-	$Timer.stop()
+	cancel_order()
 	get_tree().root.find_node("ScoreManager", true, false).add_score(order_score_reward)
 	emit_signal("order_completed")
 

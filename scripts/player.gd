@@ -40,6 +40,7 @@ func _input(event):
 		for area in overlapping_areas:
 			if area is InteractableArea:
 				area._on_interact()
+				break
 
 
 func _physics_process(_delta):
