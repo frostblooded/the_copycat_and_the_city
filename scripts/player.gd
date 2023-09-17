@@ -28,6 +28,13 @@ func get_input():
 		$AnimatedSprite.play("up")
 	else:
 		$AnimatedSprite.play("idle")
+		
+	if velocity.length() > 0:
+		if !$StepAudioPlayer.playing:
+			$StepAudioPlayer.play()
+	else:
+		$StepAudioPlayer.stop()
+	
 
 	velocity = velocity.normalized() * speed
 
