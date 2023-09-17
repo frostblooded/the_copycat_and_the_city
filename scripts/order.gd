@@ -20,6 +20,7 @@ func start():
 	current_pile = pile
 	$PlacementPosition.add_item(pile)
 	$OrderStartedAudioPlayer.play()
+	print("Order started")
 	emit_signal("order_started", $Timer.time_left)
 
 

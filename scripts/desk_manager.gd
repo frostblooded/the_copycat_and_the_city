@@ -3,8 +3,12 @@ class_name DeskManager
 
 export(Array, Texture) var symbols_for_assigning: Array = []
 
+onready var order_cooldown: Timer = get_node("OrderSpawnCooldown")
+export var order_cooldown_from: int = 4
+export var order_cooldown_to: int = 8
 
 func _on_OrderSpawnCooldown_timeout():
+	order_cooldown.start(rand_range(order_cooldown_from, order_cooldown_to))
 	var order: Order = get_first_available_order()
 
 	if order == null:
