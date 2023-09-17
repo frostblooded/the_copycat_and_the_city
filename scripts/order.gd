@@ -9,7 +9,9 @@ func start():
 	is_running = true
 	$Timer.start()
 	var pile: Pile = pile_scene.instance()
-	pile.desk = get_desk()
+	var desk = get_desk()
+	pile.desk = desk
+	pile.get_node("SymbolUI").texture = desk.get_node("SymbolUI").texture
 	$PlacementPosition.add_item(pile)
 
 

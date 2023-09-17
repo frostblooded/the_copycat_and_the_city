@@ -1,14 +1,12 @@
 extends InteractableArea
 
-signal pile_completed(pile_color)
-signal pile_taken(pile_color)
-signal pile_added(pile_color)
+signal pile_completed()
+signal pile_taken()
+signal pile_added()
 
 export var max_paper = 10
 export var current_paper = -1
 export var time_per_paper = 1.0
-
-var current_pile_color = -1
 
 var timer = Timer.new()
 var is_ready = false
@@ -29,38 +27,39 @@ func _on_interact():
 	if is_empty():
 		if not player_inventory.has_items():
 			return
-		var item = player_inventory.pop_item()
-		var pile_color = 0
-		var took_pile = take_pile(item)
+
+		var pile: Pile = player_inventory.pop_item()
+		assert(pile != null)
+
+		var took_pile = take_pile(pile)
+
 		if took_pile:
-			emit_signal("pile_added", pile_color)
+			$SymbolUI.texture = pile.get_node("SymbolUI").texture
+			emit_signal("pile_added")
 		else:
-			player_inventory.push_item(item)
+			player_inventory.push_item(pile)
 	else:
 		if is_ready:
 			var pile: Pile = inventory.get_child(0) as Pile
 
 			if player_inventory.can_push_item():
+				$SymbolUI.texture = null
 				pile.is_copied = true
 				inventory.remove_child(pile)
 				player_inventory.push_item(pile)
-				var pile_color = 0
-				emit_signal("pile_taken", pile_color)
+				emit_signal("pile_taken")
 
 
-func take_pile(item): 
+func take_pile(pile): 
 	# TODO: fix this
-	var pile_color = 0
 	var paper_count = 1
 
 	if current_paper < paper_count:
 		return false
-
 	
-	inventory.add_child(item)
+	inventory.add_child(pile)
 
 	current_paper -= paper_count
-	current_pile_color = pile_color
 
 	timer.wait_time = time_per_paper * paper_count
 	timer.one_shot = true
@@ -70,4 +69,4 @@ func take_pile(item):
 
 func _on_timer_expire():
 	is_ready = true
-	emit_signal("pile_completed", current_pile_color)
+	emit_signal("pile_completed")

@@ -1,7 +1,8 @@
 extends Sprite
 
-func _on_pile_completed(pile_color):
+func _on_pile_completed():
 	visible = true
 
-func _on_pile_taken(pile_color):
+
+func _on_pile_taken():
 	visible = false

@@ -43,6 +43,13 @@ script = ExtResource( 5 )
 [node name="Inventory" type="Node2D" parent="." index="4"]
 visible = false
 
+[node name="SymbolUI" type="TextureRect" parent="." index="5"]
+margin_left = -22.8571
+margin_top = -11.4286
+margin_right = 288.143
+margin_bottom = 234.571
+rect_scale = Vector2( 0.146434, 0.146434 )
+
 [connection signal="pile_completed" from="." to="." method="_on_PrinterInteractableArea_pile_completed"]
 [connection signal="pile_completed" from="." to="ReadyCheckmark" method="_on_pile_completed"]
 [connection signal="pile_taken" from="." to="ReadyCheckmark" method="_on_pile_taken"]
