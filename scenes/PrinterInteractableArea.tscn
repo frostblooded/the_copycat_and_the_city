@@ -47,6 +47,10 @@ margin_left = -19.0
 margin_top = -22.0
 margin_right = -7.0
 margin_bottom = -10.0
+rect_scale = Vector2( 0.998543, 0.994622 )
+tint_progress = Color( 0.196078, 0.580392, 0.262745, 1 )
+tint_from = Color( 0.941176, 0.219608, 0.219608, 1 )
+tint_to = Color( 0.196078, 0.580392, 0.262745, 1 )
 
 [node name="SymbolUI" type="TextureRect" parent="." index="6"]
 margin_left = -8.0
