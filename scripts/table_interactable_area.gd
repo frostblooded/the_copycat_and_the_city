@@ -12,7 +12,7 @@ func _on_interact():
 func remove_item():
 	assert($PlacementPosition.is_reserved)
 
-	var player: Player = get_tree().root.get_node("Main").get_node("Player")
+	var player: Player = Utils.get_player(get_tree())
 	var player_inventory: Inventory = player.get_inventory()
 	
 	if player_inventory.can_push_item():
@@ -23,7 +23,7 @@ func remove_item():
 func add_item():
 	assert(!$PlacementPosition.is_reserved)
 
-	var player: Player = get_tree().root.get_node("Main").get_node("Player")
+	var player: Player = Utils.get_player(get_tree())
 	var player_inventory: Inventory = player.get_inventory()
 
 	if not player_inventory.has_items():

@@ -1,8 +1,5 @@
 extends Node2D
-
-func _ready():
-	pass
-
+class_name Main
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):

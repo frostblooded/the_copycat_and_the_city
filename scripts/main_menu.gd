@@ -1,4 +1,4 @@
-extends Node2D
+extends Main
 class_name MainMenu
 
 export var game_scene: PackedScene = null
