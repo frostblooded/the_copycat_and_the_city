@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scenes/MandatoryLevelNodes.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/MandatoryLevelUI.tscn" type="PackedScene" id=2]
@@ -8,202 +8,8 @@
 [ext_resource path="res://sprites/GuttyKreum_JapaneseOfficeInterior_v2/Tilemap/MainTileMap.png" type="Texture" id=6]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/main.gd" type="Script" id=8]
-[ext_resource path="res://sprites/Amelia_idle_anim_16x16.png" type="Texture" id=9]
-[ext_resource path="res://animations/Adam.tres" type="SpriteFrames" id=10]
-[ext_resource path="res://animations/Alex.tres" type="SpriteFrames" id=11]
-[ext_resource path="res://scripts/idle_person.gd" type="Script" id=12]
-[ext_resource path="res://sprites/Amelia_run_16x16.png" type="Texture" id=13]
 [ext_resource path="res://scenes/ShredderInteractableArea.tscn" type="PackedScene" id=14]
-[ext_resource path="res://sprites/Amelia_phone_16x16.png" type="Texture" id=15]
-
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 13 )
-region = Rect2( 96, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 13 )
-region = Rect2( 112, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 13 )
-region = Rect2( 128, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 13 )
-region = Rect2( 144, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 13 )
-region = Rect2( 160, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 13 )
-region = Rect2( 176, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 13 )
-region = Rect2( 288, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 13 )
-region = Rect2( 304, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 13 )
-region = Rect2( 320, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 13 )
-region = Rect2( 336, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 13 )
-region = Rect2( 352, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 13 )
-region = Rect2( 368, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 9 )
-region = Rect2( 288, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 9 )
-region = Rect2( 304, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 9 )
-region = Rect2( 320, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 9 )
-region = Rect2( 336, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 9 )
-region = Rect2( 352, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 9 )
-region = Rect2( 368, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 13 )
-region = Rect2( 16, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 13 )
-region = Rect2( 32, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 13 )
-region = Rect2( 48, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 13 )
-region = Rect2( 64, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 13 )
-region = Rect2( 80, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 15 )
-region = Rect2( 0, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 15 )
-region = Rect2( 16, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 15 )
-region = Rect2( 32, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 15 )
-region = Rect2( 48, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 15 )
-region = Rect2( 64, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 15 )
-region = Rect2( 80, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 15 )
-region = Rect2( 96, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 15 )
-region = Rect2( 112, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 15 )
-region = Rect2( 128, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 13 )
-region = Rect2( 192, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 13 )
-region = Rect2( 208, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 13 )
-region = Rect2( 224, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 13 )
-region = Rect2( 240, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 13 )
-region = Rect2( 256, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 13 )
-region = Rect2( 272, 0, 16, 32 )
-
-[sub_resource type="SpriteFrames" id=40]
-animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
-"loop": true,
-"name": "Back",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
-"loop": true,
-"name": "Front",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
-"loop": true,
-"name": "Left",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
-"loop": true,
-"name": "Phone",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
-"loop": true,
-"name": "Right",
-"speed": 5.0
-} ]
+[ext_resource path="res://scenes/Persons/Person.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=41]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -426,6 +232,11 @@ points = PoolVector2Array( 32, 60.6575, 0.766724, 60.6575, 0.766724, 9.61908, 32
 [sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 129, 10 )
 
+[sub_resource type="Curve2D" id=52]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 224, 199, 0, 0, 0, 0, 120, 199 )
+}
+
 [node name="Main" type="Node2D"]
 position = Vector2( 0, 1 )
 script = ExtResource( 8 )
@@ -434,24 +245,6 @@ script = ExtResource( 8 )
 position = Vector2( 0, -1 )
 
 [node name="LevelContents" type="YSort" parent="."]
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="LevelContents"]
-position = Vector2( 192, 47 )
-frames = ExtResource( 10 )
-animation = "Front"
-script = ExtResource( 12 )
-
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="LevelContents"]
-position = Vector2( 72, 55 )
-frames = ExtResource( 11 )
-animation = "Back"
-script = ExtResource( 12 )
-
-[node name="AnimatedSprite3" type="AnimatedSprite" parent="LevelContents"]
-position = Vector2( 176, 119 )
-frames = SubResource( 40 )
-animation = "Phone"
-script = ExtResource( 12 )
 
 [node name="DeskInteractableArea" parent="LevelContents" instance=ExtResource( 4 )]
 position = Vector2( 208, 71 )
@@ -477,6 +270,7 @@ tile_data = PoolIntArray( 0, 3, 0, 7, 2, 0, 65536, 3, 0, 65543, 2, 0, 131072, 3,
 [node name="TileMapSmaller" type="TileMap" parent="LevelContents"]
 tile_set = SubResource( 50 )
 cell_size = Vector2( 8, 8 )
+show_collision = true
 format = 1
 tile_data = PoolIntArray( 15, 4, 0, 65538, 6, 0, 917504, 7, 0, 1376284, 5, 0 )
 
@@ -497,5 +291,20 @@ position = Vector2( 192, 143 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelContents/StaticBody2D"]
 position = Vector2( 127, 263 )
 shape = SubResource( 51 )
+
+[node name="Path2D" type="Path2D" parent="LevelContents"]
+curve = SubResource( 52 )
+
+[node name="Person" parent="LevelContents/Path2D" instance=ExtResource( 16 )]
+position = Vector2( 224, 199 )
+
+[node name="Person" parent="LevelContents" instance=ExtResource( 16 )]
+position = Vector2( 73, 57 )
+
+[node name="Person2" parent="LevelContents" instance=ExtResource( 16 )]
+position = Vector2( 193, 48 )
+
+[node name="Person3" parent="LevelContents" instance=ExtResource( 16 )]
+position = Vector2( 177, 119 )
 
 [node name="MandatoryLevelUI" parent="." instance=ExtResource( 2 )]

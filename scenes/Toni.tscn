@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/PrinterInteractableArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/DeskInteractableArea.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/TableInteractableArea.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Persons/Person.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -70,6 +71,11 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 2/shapes = [  ]
 2/z_index = 0
 
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 96, 40, 0, 0, 0, 0, 248, 40, 0, 0, 0, 0, 248, 136 )
+}
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
@@ -100,3 +106,13 @@ tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 
 
 [node name="TableInteractableArea" parent="." instance=ExtResource( 6 )]
 position = Vector2( 56, 128 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 3 )
+
+[node name="Person" parent="Path2D" instance=ExtResource( 7 )]
+position = Vector2( 96, 40 )
+rotate = false
+walk_chance = 0.1
+walk_cooldown = 5
+speed = 30
