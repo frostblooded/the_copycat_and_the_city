@@ -29,13 +29,13 @@ func _on_interact():
 			return
 
 		var pile: Pile = player_inventory.pop_item()
-		assert(pile != null)
 
 		var took_pile = take_pile(pile)
 
 		if took_pile:
 			$SymbolUI.texture = pile.get_node("SymbolUI").texture
 			emit_signal("pile_added")
+			$PrinterWorkingAudioPlayer.play()
 		else:
 			player_inventory.push_item(pile)
 	else:
@@ -51,6 +51,9 @@ func _on_interact():
 
 
 func take_pile(pile): 
+	if pile.is_copied:
+		return false
+
 	# TODO: fix this
 	var paper_count = 1
 
@@ -69,4 +72,5 @@ func take_pile(pile):
 
 func _on_timer_expire():
 	is_ready = true
+	$PrinterWorkingAudioPlayer.stop()
 	emit_signal("pile_completed")

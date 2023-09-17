@@ -14,6 +14,7 @@ func start():
 	pile.desk = desk
 	pile.get_node("SymbolUI").texture = desk.get_node("SymbolUI").texture
 	$PlacementPosition.add_item(pile)
+	$OrderStartedAudioPlayer.play()
 
 
 func _on_Timer_timeout():

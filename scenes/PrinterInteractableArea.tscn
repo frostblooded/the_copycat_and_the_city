@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/InteractableArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/printer.png" type="Texture" id=2]
 [ext_resource path="res://scripts/printer_interactable_area.gd" type="Script" id=3]
 [ext_resource path="res://sprites/check.png" type="Texture" id=4]
 [ext_resource path="res://scripts/printer_check_mark.gd" type="Script" id=5]
+[ext_resource path="res://sounds/printer.mp3" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 85, 79.5 )
@@ -49,6 +50,10 @@ margin_top = -11.4286
 margin_right = 288.143
 margin_bottom = 234.571
 rect_scale = Vector2( 0.146434, 0.146434 )
+
+[node name="PrinterWorkingAudioPlayer" type="AudioStreamPlayer2D" parent="." index="6"]
+stream = ExtResource( 6 )
+volume_db = 5.0
 
 [connection signal="pile_completed" from="." to="." method="_on_PrinterInteractableArea_pile_completed"]
 [connection signal="pile_completed" from="." to="ReadyCheckmark" method="_on_pile_completed"]
