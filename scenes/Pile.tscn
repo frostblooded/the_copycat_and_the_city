@@ -12,7 +12,16 @@ scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
 
 [node name="SymbolUI" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 8.0
+margin_right = 319.0
+margin_bottom = 246.0
 rect_scale = Vector2( 0.140336, 0.140336 )
+texture = ExtResource( 3 )
+
+[node name="CopiedUI" type="TextureRect" parent="."]
+visible = false
+margin_left = -40.0
+margin_right = 271.0
+margin_bottom = 246.0
+rect_scale = Vector2( 0.141505, 0.141505 )
 texture = ExtResource( 3 )

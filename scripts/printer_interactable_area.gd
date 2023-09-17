@@ -44,7 +44,7 @@ func _on_interact():
 
 			if player_inventory.can_push_item():
 				$SymbolUI.texture = null
-				pile.is_copied = true
+				pile.set_as_copied()
 				inventory.remove_child(pile)
 				player_inventory.push_item(pile)
 				emit_signal("pile_taken")
