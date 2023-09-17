@@ -42,80 +42,82 @@ position = Vector2( 302, 648 )
 [node name="TableInteractableArea" parent="." instance=ExtResource( 5 )]
 position = Vector2( 179, 651 )
 
-[node name="WallBack" parent="." instance=ExtResource( 6 )]
+[node name="Level" type="Node2D" parent="."]
+
+[node name="WallBack" parent="Level" instance=ExtResource( 6 )]
 position = Vector2( 640, 47 )
 
-[node name="WallRight" parent="." instance=ExtResource( 7 )]
+[node name="WallRight" parent="Level" instance=ExtResource( 7 )]
 position = Vector2( 656, 47 )
 
-[node name="WallRight2" parent="." instance=ExtResource( 7 )]
+[node name="WallRight2" parent="Level" instance=ExtResource( 7 )]
 position = Vector2( 656, 143 )
 
-[node name="WallRight3" parent="." instance=ExtResource( 7 )]
+[node name="WallRight3" parent="Level" instance=ExtResource( 7 )]
 position = Vector2( 656, 239 )
 
-[node name="WallRight4" parent="." instance=ExtResource( 7 )]
+[node name="WallRight4" parent="Level" instance=ExtResource( 7 )]
 position = Vector2( 656, 335 )
 
-[node name="WallRight5" parent="." instance=ExtResource( 7 )]
+[node name="WallRight5" parent="Level" instance=ExtResource( 7 )]
 position = Vector2( 656, 431 )
 
-[node name="WallRight6" parent="." instance=ExtResource( 7 )]
+[node name="WallRight6" parent="Level" instance=ExtResource( 7 )]
 position = Vector2( 656, 527 )
 
-[node name="WallRight7" parent="." instance=ExtResource( 7 )]
+[node name="WallRight7" parent="Level" instance=ExtResource( 7 )]
 position = Vector2( 656, 615 )
 
-[node name="WallRight8" parent="." instance=ExtResource( 7 )]
+[node name="WallRight8" parent="Level" instance=ExtResource( 7 )]
 position = Vector2( 656, 711 )
 
-[node name="WallBack2" parent="." instance=ExtResource( 6 )]
+[node name="WallBack2" parent="Level" instance=ExtResource( 6 )]
 position = Vector2( 63, 47 )
 
-[node name="WallBack3" parent="." instance=ExtResource( 6 )]
+[node name="WallBack3" parent="Level" instance=ExtResource( 6 )]
 position = Vector2( 160, 47 )
 
-[node name="WallBack4" parent="." instance=ExtResource( 6 )]
+[node name="WallBack4" parent="Level" instance=ExtResource( 6 )]
 position = Vector2( 160, 47 )
 
-[node name="WallBack5" parent="." instance=ExtResource( 6 )]
+[node name="WallBack5" parent="Level" instance=ExtResource( 6 )]
 position = Vector2( 256, 47 )
 
-[node name="WallBack6" parent="." instance=ExtResource( 6 )]
+[node name="WallBack6" parent="Level" instance=ExtResource( 6 )]
 position = Vector2( 352, 47 )
 
-[node name="WallBack7" parent="." instance=ExtResource( 6 )]
+[node name="WallBack7" parent="Level" instance=ExtResource( 6 )]
 position = Vector2( 448, 47 )
 
-[node name="WallBack8" parent="." instance=ExtResource( 6 )]
+[node name="WallBack8" parent="Level" instance=ExtResource( 6 )]
 position = Vector2( 544, 47 )
 
-[node name="WallLeft" parent="." instance=ExtResource( 8 )]
+[node name="WallLeft" parent="Level" instance=ExtResource( 8 )]
 position = Vector2( 48, 47 )
 
-[node name="WallLeft2" parent="." instance=ExtResource( 8 )]
+[node name="WallLeft2" parent="Level" instance=ExtResource( 8 )]
 position = Vector2( 48, 143 )
 
-[node name="WallLeft4" parent="." instance=ExtResource( 8 )]
+[node name="WallLeft4" parent="Level" instance=ExtResource( 8 )]
 position = Vector2( 48, 143 )
 
-[node name="WallLeft3" parent="." instance=ExtResource( 8 )]
+[node name="WallLeft3" parent="Level" instance=ExtResource( 8 )]
 position = Vector2( 48, 239 )
 
-[node name="WallLeft5" parent="." instance=ExtResource( 8 )]
+[node name="WallLeft5" parent="Level" instance=ExtResource( 8 )]
 position = Vector2( 48, 335 )
 
-[node name="WallLeft6" parent="." instance=ExtResource( 8 )]
+[node name="WallLeft6" parent="Level" instance=ExtResource( 8 )]
 position = Vector2( 48, 431 )
 
-[node name="WallLeft7" parent="." instance=ExtResource( 8 )]
+[node name="WallLeft7" parent="Level" instance=ExtResource( 8 )]
 position = Vector2( 48, 527 )
 
-[node name="WallLeft8" parent="." instance=ExtResource( 8 )]
+[node name="WallLeft8" parent="Level" instance=ExtResource( 8 )]
 position = Vector2( 48, 623 )
 
-[node name="WallLeft9" parent="." instance=ExtResource( 8 )]
+[node name="WallLeft9" parent="Level" instance=ExtResource( 8 )]
 position = Vector2( 48, 711 )
 
-[node name="Water" parent="." instance=ExtResource( 9 )]
+[node name="Water" parent="Level" instance=ExtResource( 9 )]
 position = Vector2( 544, 647 )
