@@ -1,4 +1,5 @@
 extends InteractableArea
+class_name DeskInteractableArea
 
 export var pile_scene: PackedScene = null
 
@@ -19,13 +20,16 @@ func remove_item():
 func add_item():
 	assert(!$Order/PlacementPosition.is_reserved)
 	var player: Player = Utils.get_player(get_tree())
-	var inventory: Inventory = player.get_inventory()
+	var inventory = player.get_inventory()
 	var pile: Pile = inventory.get_top_item() as Pile
 
 	if pile == null:
 		return
 
 	if !pile.is_copied:
+		return
+	
+	if pile.desk != self:
 		return
 
 	inventory.pop_item()

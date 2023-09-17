@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/DeskInteractableArea.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/TableInteractableArea.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/PrinterInteractableArea.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/OrderManager.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/DeskManager.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
@@ -40,5 +40,4 @@ scale = Vector2( 0.5, 0.5 )
 [node name="PrinterInteractableArea" parent="." instance=ExtResource( 6 )]
 position = Vector2( 347, 386 )
 
-[node name="OrderManager" parent="." instance=ExtResource( 7 )]
-position = Vector2( 176, 152 )
+[node name="DeskManager" parent="." instance=ExtResource( 7 )]

@@ -1,9 +1,10 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://scripts/order_manager.gd" type="Script" id=1]
+[ext_resource path="res://scripts/desk_manager.gd" type="Script" id=1]
 
-[node name="OrderManager" type="Node2D"]
+[node name="DeskManager" type="Node2D"]
 script = ExtResource( 1 )
+symbols_for_assigning = [ null, null ]
 
 [node name="OrderSpawnCooldown" type="Timer" parent="."]
 autostart = true

@@ -8,7 +8,9 @@ export var pile_scene: PackedScene = null
 func start():
 	is_running = true
 	$Timer.start()
-	$PlacementPosition.add_item(pile_scene.instance())
+	var pile: Pile = pile_scene.instance()
+	pile.desk = get_desk()
+	$PlacementPosition.add_item(pile)
 
 
 func _on_Timer_timeout():
@@ -19,3 +21,7 @@ func complete():
 	is_running = false
 	$Timer.stop()
 	print("Completed order!")
+
+
+func get_desk() -> Node2D:
+	return get_parent() as Node2D
