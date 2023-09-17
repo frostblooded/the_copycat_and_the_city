@@ -9,11 +9,13 @@ margin_bottom = 19.0
 [node name="ScoreLabel" type="Label" parent="."]
 margin_right = 243.0
 margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Score: 0"
 valign = 1
 
 [node name="TimeLeftLabel" type="Label" parent="."]
 margin_right = 243.0
 margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Time left: 60"
 align = 2

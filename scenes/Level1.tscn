@@ -121,16 +121,16 @@ points = PoolVector2Array( 26.1334, 44.9663, 6.84326, 44.9663, 6.84326, 22.3004,
 points = PoolVector2Array( 25.1338, 39.9514, 5.84363, 39.9514, 5.84363, 19.6967, 25.1338, 19.6967 )
 
 [sub_resource type="ConvexPolygonShape2D" id=7]
-points = PoolVector2Array( 64, 41.9603, 0.0395508, 41.9603, 0, 0.486511, 64, 0.486511 )
+points = PoolVector2Array( 58.0906, 27.7671, 4.59985, 27.9609, 4.59985, 1.02176, 57.7029, 1.60318 )
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
-points = PoolVector2Array( 113.689, 64, 16.7561, 64, 16.7561, 13.2627, 113.689, 13.2627 )
+points = PoolVector2Array( 95.3805, 45.1692, 32.2319, 45.3307, 32.5549, 29.3416, 94.896, 29.3416 )
 
 [sub_resource type="ConvexPolygonShape2D" id=9]
-points = PoolVector2Array( 64, 48.5347, 0.144531, 48.5347, 0.144531, 7.54324, 64, 7.54324 )
+points = PoolVector2Array( 62.5919, 36.6822, 1.15515, 37.845, 0.379883, 12.0687, 62.9795, 11.4873 )
 
 [sub_resource type="ConvexPolygonShape2D" id=10]
-points = PoolVector2Array( 32, 60.6575, 0.766724, 60.6575, 0.766724, 9.61908, 32, 9.61908 )
+points = PoolVector2Array( 31.5283, 58.5084, 12.9552, 58.8314, 12.4707, 11.5103, 32, 11.5103 )
 
 [sub_resource type="TileSet" id=5]
 0/name = "MainTileMap.png 0"
@@ -328,8 +328,14 @@ position = Vector2( 0, 1 )
 script = ExtResource( 8 )
 
 [node name="MandatoryLevelNodes" parent="." instance=ExtResource( 1 )]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="LevelContents" type="YSort" parent="."]
+
+[node name="Player" parent="LevelContents" instance=ExtResource( 7 )]
+position = Vector2( 16, 199 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="LevelContents"]
 position = Vector2( 48, 47 )
@@ -348,25 +354,26 @@ position = Vector2( 80, 239 )
 [node name="TileMap" type="TileMap" parent="LevelContents"]
 tile_set = SubResource( 5 )
 cell_size = Vector2( 32, 32 )
+cell_y_sort = true
 format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 1703961, 4, 0 )
 
 [node name="TileMap2" type="TileMap" parent="LevelContents"]
 tile_set = SubResource( 5 )
 cell_size = Vector2( 32, 32 )
+cell_y_sort = true
 format = 1
 tile_data = PoolIntArray( 0, 3, 0, 7, 2, 0, 65536, 3, 0, 65543, 2, 0, 131072, 3, 0, 131079, 2, 0, 196608, 3, 0, 196615, 2, 0, 262144, 3, 0, 262151, 2, 0, 327680, 3, 0, 327687, 2, 0, 393216, 3, 0, 393223, 2, 0, 458752, 3, 0, 458759, 2, 0 )
 
 [node name="TileMapSmaller" type="TileMap" parent="LevelContents"]
 tile_set = SubResource( 5 )
 cell_size = Vector2( 8, 8 )
+cell_tile_origin = 2
+cell_y_sort = true
 format = 1
 tile_data = PoolIntArray( 65556, 6, 0, 655378, 8, 0, 983054, 7, 0, 1114114, 9, 0, 1703961, 4, 0 )
 
 [node name="ShredderInteractableArea" parent="LevelContents" instance=ExtResource( 14 )]
 position = Vector2( 176, 239 )
-
-[node name="Player" parent="LevelContents" instance=ExtResource( 7 )]
-position = Vector2( 16, 199 )
 
 [node name="MandatoryLevelUI" parent="." instance=ExtResource( 2 )]

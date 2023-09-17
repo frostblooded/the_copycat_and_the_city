@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sounds/background-music.mp3" type="AudioStream" id=1]
 [ext_resource path="res://scenes/ScoreManager.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sounds/office_ambience.mp3" type="AudioStream" id=3]
 [ext_resource path="res://scenes/DeskManager.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/GameManager.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=8]
@@ -16,7 +17,12 @@
 
 [node name="GameManager" parent="." instance=ExtResource( 6 )]
 
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="MusicAudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
+volume_db = -10.0
+autoplay = true
+
+[node name="AmbienceAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 volume_db = -5.0
 autoplay = true
