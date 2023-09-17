@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/InteractableArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/printer.png" type="Texture" id=2]
@@ -14,6 +14,38 @@ extents = Vector2( 12.25, 23.5 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 12.5, 13.5 )
 
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Shake"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -2, 0 ), Vector2( 0, 0 ), Vector2( 2, 0 ) ]
+}
+
 [node name="PrinterInteractableArea" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 max_paper = 10
@@ -24,7 +56,6 @@ time_per_paper = 1.0
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
-position = Vector2( 0.75, 0 )
 texture = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
@@ -61,6 +92,11 @@ margin_bottom = 8.0
 [node name="PrinterWorkingAudioPlayer" type="AudioStreamPlayer2D" parent="." index="7"]
 stream = ExtResource( 6 )
 volume_db = 5.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
+playback_speed = 1.5
+anims/RESET = SubResource( 3 )
+anims/Shake = SubResource( 4 )
 
 [connection signal="pile_added" from="." to="Progress" method="start_progress"]
 [connection signal="pile_completed" from="." to="." method="_on_PrinterInteractableArea_pile_completed"]

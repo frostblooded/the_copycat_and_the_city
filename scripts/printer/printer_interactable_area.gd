@@ -36,6 +36,7 @@ func _on_interact():
 			$SymbolUI.texture = pile.get_node("SymbolUI").texture
 			emit_signal("pile_added", timer.time_left)
 			$PrinterWorkingAudioPlayer.play()
+			$AnimationPlayer.play("Shake")
 		else:
 			player_inventory.push_item(pile)
 	else:
@@ -73,4 +74,5 @@ func take_pile(pile):
 func _on_timer_expire():
 	is_ready = true
 	$PrinterWorkingAudioPlayer.stop()
+	$AnimationPlayer.stop()
 	emit_signal("pile_completed")
