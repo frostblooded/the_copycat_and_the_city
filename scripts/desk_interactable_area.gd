@@ -29,6 +29,9 @@ func add_item():
 	if !pile.is_copied:
 		return
 	
+	if pile.is_failed:
+		return
+	
 	if pile.desk != self:
 		return
 
