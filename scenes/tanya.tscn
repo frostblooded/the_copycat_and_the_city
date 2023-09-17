@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://sprites/Adam_idle_anim_16x16.png" type="Texture" id=11]
 [ext_resource path="res://scripts/idle_person.gd" type="Script" id=12]
 [ext_resource path="res://sounds/background-music.mp3" type="AudioStream" id=13]
+[ext_resource path="res://scenes/ShredderInteractableArea.tscn" type="PackedScene" id=14]
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 10 )
@@ -375,3 +376,6 @@ tile_data = PoolIntArray( 65556, 6, 0, 655378, 8, 0, 983054, 7, 0, 1114114, 9, 0
 stream = ExtResource( 13 )
 volume_db = -5.0
 autoplay = true
+
+[node name="ShredderInteractableArea" parent="." instance=ExtResource( 14 )]
+position = Vector2( 176, 239 )
