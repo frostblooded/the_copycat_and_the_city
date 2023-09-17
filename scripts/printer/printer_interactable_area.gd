@@ -2,7 +2,7 @@ extends InteractableArea
 
 signal pile_completed()
 signal pile_taken()
-signal pile_added()
+signal pile_added(time)
 
 export var max_paper = 10
 export var current_paper = -1
@@ -34,7 +34,7 @@ func _on_interact():
 
 		if took_pile:
 			$SymbolUI.texture = pile.get_node("SymbolUI").texture
-			emit_signal("pile_added")
+			emit_signal("pile_added", timer.time_left)
 			$PrinterWorkingAudioPlayer.play()
 		else:
 			player_inventory.push_item(pile)

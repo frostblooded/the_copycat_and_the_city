@@ -2,42 +2,40 @@
 
 [ext_resource path="res://scenes/InteractableArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/printer.png" type="Texture" id=2]
-[ext_resource path="res://scripts/printer_interactable_area.gd" type="Script" id=3]
-[ext_resource path="res://sprites/check.png" type="Texture" id=4]
-[ext_resource path="res://scripts/printer_check_mark.gd" type="Script" id=5]
+[ext_resource path="res://scripts/printer/printer_interactable_area.gd" type="Script" id=3]
+[ext_resource path="res://sprites/check_pixel.png" type="Texture" id=4]
+[ext_resource path="res://scripts/printer/printer_check_mark.gd" type="Script" id=5]
 [ext_resource path="res://sounds/printer.mp3" type="AudioStream" id=6]
+[ext_resource path="res://scenes/ProgressBar.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 85, 79.5 )
+extents = Vector2( 12.25, 23.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 46.5, 53 )
+extents = Vector2( 12.5, 13.5 )
 
 [node name="PrinterInteractableArea" instance=ExtResource( 1 )]
-scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 3 )
 max_paper = 10
 current_paper = -1
 time_per_paper = 1.0
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2( -5, 0 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
-scale = Vector2( 3.5625, 3.5625 )
+position = Vector2( 0.75, 0 )
 texture = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
-position = Vector2( -5.5, -4 )
 shape = SubResource( 2 )
 
 [node name="ReadyCheckmark" type="Sprite" parent="." index="3"]
 visible = false
-position = Vector2( 35.4077, -55.9946 )
-scale = Vector2( 0.195166, 0.195166 )
+position = Vector2( 12, -18 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
 script = ExtResource( 5 )
 
@@ -55,6 +53,13 @@ rect_scale = Vector2( 0.146434, 0.146434 )
 stream = ExtResource( 6 )
 volume_db = 5.0
 
+[node name="Progress" parent="." index="5" instance=ExtResource( 7 )]
+margin_left = -19.0
+margin_top = -22.0
+margin_right = -7.0
+margin_bottom = -10.0
+
+[connection signal="pile_added" from="." to="Progress" method="start_progress"]
 [connection signal="pile_completed" from="." to="." method="_on_PrinterInteractableArea_pile_completed"]
 [connection signal="pile_completed" from="." to="ReadyCheckmark" method="_on_pile_completed"]
 [connection signal="pile_taken" from="." to="ReadyCheckmark" method="_on_pile_taken"]

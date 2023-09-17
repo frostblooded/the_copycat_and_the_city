@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MainTileMap.png-d8a44f060cd333d9b192a1f7c8ceab22.stex"
+path="res://.import/pile_backup.png-3358c1ef002ca34cea79a6f371feda26.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/GuttyKreum_JapaneseOfficeInterior_v2/Tilemap/MainTileMap.png"
-dest_files=[ "res://.import/MainTileMap.png-d8a44f060cd333d9b192a1f7c8ceab22.stex" ]
+source_file="res://sprites/pile_backup.png"
+dest_files=[ "res://.import/pile_backup.png-3358c1ef002ca34cea79a6f371feda26.stex" ]
 
 [params]
 

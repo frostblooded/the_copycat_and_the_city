@@ -7,14 +7,15 @@
 [ext_resource path="res://scripts/placement_position.gd" type="Script" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 47.19
-height = 44.78
+radius = 18.0
+height = 12.0
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
+speed = 100
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 5, 5 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 hframes = 3
 vframes = 4
@@ -23,19 +24,19 @@ frame = 1
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 8, 8 )
+position = Vector2( 2, 7 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 8, 8 )
+position = Vector2( 2, 7 )
 shape = SubResource( 1 )
 
 [node name="InteractUI" type="TextureRect" parent="."]
-margin_left = 24.0
-margin_top = -88.0
-margin_right = 102.0
-margin_bottom = -16.0
-rect_scale = Vector2( 1.0124, 0.949655 )
+margin_left = 9.0
+margin_top = -38.0
+margin_right = 87.0
+margin_bottom = 34.0
+rect_scale = Vector2( 0.276709, 0.276709 )
 texture = ExtResource( 4 )
 
 [node name="Inventory" type="Node2D" parent="."]
@@ -43,13 +44,12 @@ position = Vector2( 0, 24 )
 script = ExtResource( 3 )
 
 [node name="PlacementPosition" type="Node2D" parent="Inventory"]
-rotation = 0.00873974
 script = ExtResource( 5 )
 
 [node name="PlacementPosition2" type="Node2D" parent="Inventory"]
-position = Vector2( 0, -24 )
+position = Vector2( 0, -10 )
 script = ExtResource( 5 )
 
 [node name="PlacementPosition3" type="Node2D" parent="Inventory"]
-position = Vector2( 0, -48 )
+position = Vector2( 0, -20 )
 script = ExtResource( 5 )
