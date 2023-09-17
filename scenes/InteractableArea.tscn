@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/interactable_area.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 39.5, 10 )
+extents = Vector2( 22, 10 )
 
 [node name="InteractableArea" type="Area2D"]
 script = ExtResource( 1 )
