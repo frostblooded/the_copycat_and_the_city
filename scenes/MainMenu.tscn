@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Main.tscn" type="PackedScene" id=2]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 1 )
+game_scene = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+margin_right = 256.0
+margin_bottom = 256.0
+color = Color( 0.4, 0.235294, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = 42.0
+margin_top = 74.0
+margin_right = 213.0
+margin_bottom = 88.0
+text = "The Copycat and the Office"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="StartGameButton" type="Button" parent="Control"]
+margin_left = 83.0
+margin_top = 130.0
+margin_right = 166.0
+margin_bottom = 150.0
+text = "Start Game"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="QuitGameButton" type="Button" parent="Control"]
+margin_left = 83.0
+margin_top = 166.0
+margin_right = 165.0
+margin_bottom = 186.0
+text = "Quit Game"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="pressed" from="Control/StartGameButton" to="." method="_on_StartGameButton_pressed"]
+[connection signal="pressed" from="Control/QuitGameButton" to="." method="_on_QuitGameButton_pressed"]
