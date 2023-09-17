@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/complete_order.mp3-018c87f0488f2e705521b0059b716747.mp3str"
+
+[deps]
+
+source_file="res://sounds/complete_order.mp3"
+dest_files=[ "res://.import/complete_order.mp3-018c87f0488f2e705521b0059b716747.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
