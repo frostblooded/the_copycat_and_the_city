@@ -27,11 +27,19 @@ align = 1
 valign = 1
 uppercase = true
 
-[node name="Button" type="Button" parent="."]
-margin_left = 97.0
-margin_top = 166.0
-margin_right = 154.0
-margin_bottom = 186.0
-text = "Restart"
+[node name="RestartButton" type="Button" parent="."]
+margin_left = 81.039
+margin_top = 152.655
+margin_right = 176.039
+margin_bottom = 172.655
+text = "Restart Level"
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[node name="MainMenuButton" type="Button" parent="."]
+margin_left = 62.1927
+margin_top = 184.693
+margin_right = 196.193
+margin_bottom = 204.693
+text = "Back to Main Menu"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
