@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/InteractableArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/printer.png" type="Texture" id=2]
 [ext_resource path="res://scripts/printer_interactable_area.gd" type="Script" id=3]
+[ext_resource path="res://sprites/check.png" type="Texture" id=4]
+[ext_resource path="res://scripts/printer_check_mark.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 14, 34 )
+extents = Vector2( 85, 79.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 46.5, 53 )
 
 [node name="PrinterInteractableArea" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
@@ -14,10 +19,29 @@ current_paper = -1
 time_per_paper = 1.0
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2( -1, -1 )
+position = Vector2( -5, 0 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
+scale = Vector2( 3.5625, 3.5625 )
 texture = ExtResource( 2 )
 
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2( -5.5, -4 )
+shape = SubResource( 2 )
+
+[node name="ReadyCheckmark" type="Sprite" parent="." index="3"]
+visible = false
+position = Vector2( 35.4077, -55.9946 )
+scale = Vector2( 0.195166, 0.195166 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
+
+[node name="Inventory" type="Node2D" parent="." index="4"]
+visible = false
+
 [connection signal="pile_completed" from="." to="." method="_on_PrinterInteractableArea_pile_completed"]
+[connection signal="pile_completed" from="." to="ReadyCheckmark" method="_on_pile_completed"]
+[connection signal="pile_taken" from="." to="ReadyCheckmark" method="_on_pile_taken"]

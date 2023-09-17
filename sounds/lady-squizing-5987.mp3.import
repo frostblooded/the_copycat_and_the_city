@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lady-squizing-5987.mp3-dc2a7db243a4e5b1996978beb13bd7fb.mp3str"
+
+[deps]
+
+source_file="res://sounds/lady-squizing-5987.mp3"
+dest_files=[ "res://.import/lady-squizing-5987.mp3-dc2a7db243a4e5b1996978beb13bd7fb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

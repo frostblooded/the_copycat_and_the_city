@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/new-order.mp3-d5977390733ed961773a04daaa068c9b.mp3str"
+
+[deps]
+
+source_file="res://sounds/new-order.mp3"
+dest_files=[ "res://.import/new-order.mp3-d5977390733ed961773a04daaa068c9b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

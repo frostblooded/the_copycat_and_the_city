@@ -13,3 +13,9 @@ func start():
 
 func _on_Timer_timeout():
 	get_tree().quit()
+
+
+func complete():
+	is_running = false
+	$Timer.stop()
+	print("Completed order!")

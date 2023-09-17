@@ -37,3 +37,15 @@ func pop_item() -> Node2D:
 			return placement_position.remove_item()
 	
 	return null
+
+
+func get_top_item() -> Node2D:
+	var placement_positions: Array = get_children()
+
+	for i in range(placement_positions.size() - 1, -1, -1):
+		var placement_position: PlacementPosition = placement_positions[i]
+
+		if placement_position.is_reserved:
+			return placement_position.get_item()
+	
+	return null

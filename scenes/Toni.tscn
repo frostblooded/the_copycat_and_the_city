@@ -1,7 +1,25 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/PrinterInteractableArea.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/wood.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/DeskInteractableArea.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 385, 367 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 3000, 2500 )
+
 [node name="PrinterInteractableArea" parent="." instance=ExtResource( 1 )]
+position = Vector2( 324, 384 )
+
+[node name="Desk" parent="." instance=ExtResource( 5 )]
+position = Vector2( 342, 80 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 336, 152 )
+scale = Vector2( 0.5, 0.5 )
