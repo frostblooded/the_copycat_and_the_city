@@ -1,8 +1,8 @@
 extends InteractableArea
 
-signal pile_completed(pile_color)
-signal pile_taken(pile_color)
-signal pile_added(pile_color)
+signal pile_completed()
+signal pile_taken()
+signal pile_added(time)
 
 export var max_paper = 10
 export var current_paper = -1
@@ -33,7 +33,7 @@ func _on_interact():
 		var pile_color = 0
 		var took_pile = take_pile(item)
 		if took_pile:
-			emit_signal("pile_added", pile_color)
+			emit_signal("pile_added", timer.time_left)
 		else:
 			player_inventory.push_item(item)
 	else:
@@ -45,7 +45,7 @@ func _on_interact():
 				inventory.remove_child(pile)
 				player_inventory.push_item(pile)
 				var pile_color = 0
-				emit_signal("pile_taken", pile_color)
+				emit_signal("pile_taken")
 
 
 func take_pile(item): 
@@ -70,4 +70,4 @@ func take_pile(item):
 
 func _on_timer_expire():
 	is_ready = true
-	emit_signal("pile_completed", current_pile_color)
+	emit_signal("pile_completed")

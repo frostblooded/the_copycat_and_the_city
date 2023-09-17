@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/InteractableArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/printer.png" type="Texture" id=2]
-[ext_resource path="res://scripts/printer_interactable_area.gd" type="Script" id=3]
+[ext_resource path="res://scripts/printer/printer_interactable_area.gd" type="Script" id=3]
 [ext_resource path="res://sprites/check_pixel.png" type="Texture" id=4]
-[ext_resource path="res://scripts/printer_check_mark.gd" type="Script" id=5]
+[ext_resource path="res://scripts/printer/printer_check_mark.gd" type="Script" id=5]
+[ext_resource path="res://scenes/ProgressBar.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.25, 23.5 )
@@ -40,6 +41,13 @@ script = ExtResource( 5 )
 [node name="Inventory" type="Node2D" parent="." index="4"]
 visible = false
 
+[node name="Progress" parent="." index="5" instance=ExtResource( 6 )]
+margin_left = -19.0
+margin_top = -22.0
+margin_right = -7.0
+margin_bottom = -10.0
+
+[connection signal="pile_added" from="." to="Progress" method="start_progress"]
 [connection signal="pile_completed" from="." to="." method="_on_PrinterInteractableArea_pile_completed"]
 [connection signal="pile_completed" from="." to="ReadyCheckmark" method="_on_pile_completed"]
 [connection signal="pile_taken" from="." to="ReadyCheckmark" method="_on_pile_taken"]
