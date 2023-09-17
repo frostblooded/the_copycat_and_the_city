@@ -13,21 +13,21 @@ func remove_item():
 	assert($PlacementPosition.is_reserved)
 
 	var player: Player = get_tree().root.get_node("Main").get_node("Player")
-	var inventory: Inventory = player.get_inventory()
+	var player_inventory: Inventory = player.get_inventory()
 	
-	if inventory.can_push_item():
+	if player_inventory.can_push_item():
 		var item: Node2D = $PlacementPosition.remove_item()
-		inventory.push_item(item)
+		player_inventory.push_item(item)
 
 
 func add_item():
 	assert(!$PlacementPosition.is_reserved)
 
 	var player: Player = get_tree().root.get_node("Main").get_node("Player")
-	var inventory: Inventory = player.get_inventory()
+	var player_inventory: Inventory = player.get_inventory()
 
-	if not inventory.has_items():
+	if not player_inventory.has_items():
 		return
 
-	var top_item: Node2D = inventory.pop_item()
+	var top_item: Node2D = player_inventory.pop_item()
 	$PlacementPosition.add_item(top_item)

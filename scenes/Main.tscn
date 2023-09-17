@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://scenes/TableInteractableArea.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/PrinterInteractableArea.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/DeskManager.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/ScoreManager.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sounds/background-music.mp3" type="AudioStream" id=9]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
@@ -33,3 +35,22 @@ scale = Vector2( 0.5, 0.5 )
 position = Vector2( 131, 210 )
 
 [node name="DeskManager" parent="." instance=ExtResource( 7 )]
+
+[node name="ScoreManager" parent="." instance=ExtResource( 8 )]
+
+[node name="HUD" type="MarginContainer" parent="."]
+margin_right = 64.0
+margin_bottom = 25.0
+
+[node name="ScoreLabel" type="Label" parent="HUD"]
+margin_top = 5.0
+margin_right = 64.0
+margin_bottom = 19.0
+text = "Score: 0"
+align = 1
+valign = 1
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+volume_db = -5.0
+autoplay = true

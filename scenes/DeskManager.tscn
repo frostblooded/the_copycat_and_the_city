@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/desk_manager.gd" type="Script" id=1]
+[ext_resource path="res://sprites/symbol_4.png" type="Texture" id=2]
+[ext_resource path="res://sprites/symbol_5.png" type="Texture" id=3]
+[ext_resource path="res://sprites/symbol_3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/symbol_2.png" type="Texture" id=5]
+[ext_resource path="res://sprites/symbol_1.png" type="Texture" id=6]
 
 [node name="DeskManager" type="Node2D"]
 script = ExtResource( 1 )
-symbols_for_assigning = [ null, null ]
+symbols_for_assigning = [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ]
 
 [node name="OrderSpawnCooldown" type="Timer" parent="."]
 autostart = true

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/funny-meow.mp3-741b2cfbf20b050163a992eb1b57f01a.mp3s
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
