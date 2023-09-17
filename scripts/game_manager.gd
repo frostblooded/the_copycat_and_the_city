@@ -7,10 +7,12 @@ func _process(_delta):
 
 
 func end_game():
-	var end_game_screen: Control = get_parent().get_node("EndGameScreen")
+	var end_game_screen: Control = get_tree().root.find_node("EndGameScreen", true, false)
 	end_game_screen.visible = true
-	var score: int = get_parent().get_node("ScoreManager").score
+	var score: int = get_tree().root.find_node("ScoreManager", true, false).score
 	end_game_screen.get_node("ScoreLabel").text = "Score: {score}".format({"score": score})
+	$EndGameAudioPlayer.play()
+	Utils.get_player(get_tree()).queue_free()
 
 
 func _on_EndGameTimer_timeout():

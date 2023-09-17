@@ -20,7 +20,6 @@ func start():
 	current_pile = pile
 	$PlacementPosition.add_item(pile)
 	$OrderStartedAudioPlayer.play()
-	print("Order started")
 	emit_signal("order_started", $Timer.time_left)
 
 
@@ -38,6 +37,7 @@ func stop_order():
 func complete():
 	stop_order()
 	get_tree().root.find_node("ScoreManager", true, false).add_score(order_score_reward)
+	$OrderCompletedAudioPlayer.play()
 	emit_signal("order_completed")
 
 
