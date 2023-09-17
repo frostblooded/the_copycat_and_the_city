@@ -20,7 +20,6 @@ __meta__ = {
 
 [node name="Player" parent="LevelContents" instance=ExtResource( 2 )]
 position = Vector2( 143, 110 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="Desk" parent="LevelContents" instance=ExtResource( 4 )]
 position = Vector2( 96, 46 )

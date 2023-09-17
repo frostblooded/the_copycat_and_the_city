@@ -368,6 +368,5 @@ position = Vector2( 176, 239 )
 
 [node name="Player" parent="LevelContents" instance=ExtResource( 7 )]
 position = Vector2( 16, 199 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="MandatoryLevelUI" parent="." instance=ExtResource( 2 )]

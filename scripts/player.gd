@@ -17,6 +17,17 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed("walk_up"):
 		velocity.y -= 1
+	
+	if velocity.x > 0:
+		$AnimatedSprite.play("right")
+	elif velocity.x < 0:
+		$AnimatedSprite.play("left")
+	elif velocity.y > 0:
+		$AnimatedSprite.play("down")
+	elif velocity.y < 0:
+		$AnimatedSprite.play("up")
+	else:
+		$AnimatedSprite.play("idle")
 
 	velocity = velocity.normalized() * speed
 
