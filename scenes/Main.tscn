@@ -20,6 +20,7 @@ __meta__ = {
 }
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
+rotation = -0.000681895
 
 [node name="Desk" parent="." instance=ExtResource( 4 )]
 position = Vector2( 96, 46 )
@@ -27,8 +28,11 @@ position = Vector2( 96, 46 )
 [node name="Desk2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 183, 45 )
 
+[node name="Desk3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 221, 139 )
+
 [node name="TableInteractableArea" parent="." instance=ExtResource( 5 )]
-position = Vector2( 73, 134 )
+position = Vector2( 74, 210 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 143, 110 )
@@ -38,6 +42,9 @@ scale = Vector2( 0.5, 0.5 )
 position = Vector2( 131, 210 )
 
 [node name="DeskManager" parent="." instance=ExtResource( 7 )]
+scale = Vector2( 1.00773, 1.08919 )
+order_cooldown_from = 2
+order_cooldown_to = 4
 
 [node name="ScoreManager" parent="." instance=ExtResource( 8 )]
 
