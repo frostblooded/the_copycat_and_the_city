@@ -3,6 +3,7 @@ class_name Order
 
 var is_running: bool = false
 export var pile_scene: PackedScene = null
+export var order_score_reward: int = 10
 
 
 func start():
@@ -17,12 +18,13 @@ func start():
 
 func _on_Timer_timeout():
 	get_tree().quit()
+	print("Order expired! Game over!")
 
 
 func complete():
 	is_running = false
 	$Timer.stop()
-	print("Completed order!")
+	get_tree().root.find_node("ScoreManager", true, false).add_score(order_score_reward)
 
 
 func get_desk() -> Node2D:

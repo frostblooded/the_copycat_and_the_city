@@ -31,6 +31,5 @@ scale = Vector2( 1.47433, 1.44099 )
 shape = SubResource( 2 )
 
 [node name="PlacementPosition" type="Node2D" parent="." index="3"]
-position = Vector2( 0, -28 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( 0, -27.7034 )
 script = ExtResource( 5 )
