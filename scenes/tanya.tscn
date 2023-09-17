@@ -325,7 +325,7 @@ points = PoolVector2Array( 32, 60.6575, 0.766724, 60.6575, 0.766724, 9.61908, 32
 } ]
 9/z_index = 0
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="YSort"]
 position = Vector2( 0, 1 )
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
