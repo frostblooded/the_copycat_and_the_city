@@ -19,7 +19,7 @@ func _ready():
 
 func assign_desk_symbols():
 	var desks: Array = get_desks()
-	assert(desks.size() == symbols_for_assigning.size())
+	assert(desks.size() < symbols_for_assigning.size())
 
 	for i in range(0, desks.size()):
 		var desk = desks[i]

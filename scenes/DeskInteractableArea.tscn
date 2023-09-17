@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://sprites/table_front.png" type="Texture" id=1]
 [ext_resource path="res://scenes/InteractableArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/desk_interactable_area.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Pile.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Order.tscn" type="PackedScene" id=5]
-[ext_resource path="res://sprites/check.png" type="Texture" id=6]
+[ext_resource path="res://sprites/symbol_1.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.5, 13.5 )
@@ -30,9 +30,9 @@ shape = SubResource( 1 )
 position = Vector2( 0, -8.58369 )
 
 [node name="SymbolUI" type="TextureRect" parent="." index="4"]
-margin_left = -14.8264
-margin_top = 8.58369
-margin_right = 296.174
-margin_bottom = 254.584
-rect_scale = Vector2( 0.0925196, 0.0925196 )
+margin_left = -6.0
+margin_top = 5.0
+margin_right = 10.0
+margin_bottom = 21.0
+rect_scale = Vector2( 0.689476, 0.689476 )
 texture = ExtResource( 6 )
