@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/Pile.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Order.tscn" type="PackedScene" id=5]
 [ext_resource path="res://sprites/symbol_1.png" type="Texture" id=6]
-[ext_resource path="res://scenes/ProgressBar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Progress.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 27.5, 19 )
@@ -42,15 +42,12 @@ margin_bottom = 21.0
 rect_scale = Vector2( 0.689476, 0.689476 )
 texture = ExtResource( 6 )
 
-[node name="TextureProgress" parent="." index="5" instance=ExtResource( 7 )]
-margin_left = -28.0
-margin_top = -4.0
-margin_right = -16.0
-margin_bottom = 8.0
-tint_progress = Color( 0, 1, 0.0666667, 1 )
+[node name="Progress" parent="." index="5" instance=ExtResource( 7 )]
+position = Vector2( -28, -4 )
 inverse = true
-tint_from = Color( 0.207843, 0.670588, 0.145098, 1 )
-tint_to = Color( 0.843137, 0.0666667, 0.0666667, 1 )
+tint_from = Color( 0.239216, 0.658824, 0.254902, 1 )
+tint_to = Color( 0.847059, 0.282353, 0.282353, 1 )
+shake_amount = 3
 
-[connection signal="order_completed" from="Order" to="TextureProgress" method="complete"]
-[connection signal="order_started" from="Order" to="TextureProgress" method="start_progress"]
+[connection signal="order_completed" from="Order" to="Progress" method="complete"]
+[connection signal="order_started" from="Order" to="Progress" method="start_progress"]

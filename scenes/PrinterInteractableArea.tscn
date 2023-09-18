@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/InteractableArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/printer.png" type="Texture" id=2]
@@ -6,8 +6,10 @@
 [ext_resource path="res://sprites/check_pixel.png" type="Texture" id=4]
 [ext_resource path="res://scripts/printer/printer_check_mark.gd" type="Script" id=5]
 [ext_resource path="res://sounds/printer.mp3" type="AudioStream" id=6]
-[ext_resource path="res://scenes/ProgressBar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Progress.tscn" type="PackedScene" id=7]
 [ext_resource path="res://sprites/x_pixel.png" type="Texture" id=8]
+[ext_resource path="res://sounds/hammering.mp3" type="AudioStream" id=9]
+[ext_resource path="res://sounds/stuck-printer.mp3" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.25, 23.5 )
@@ -49,11 +51,11 @@ tracks/0/keys = {
 
 [node name="PrinterInteractableArea" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-max_paper = 10
+max_paper = 100
 current_paper = -1
 time_per_paper = 1.0
-stall_chance_per_frame = 0.003
-unsall_chance_per_interact = 0.3
+stall_chance_per_frame = 0.005
+unsall_chance_per_interact = 0.2
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )
@@ -77,14 +79,9 @@ script = ExtResource( 5 )
 visible = false
 
 [node name="Progress" parent="." index="5" instance=ExtResource( 7 )]
-margin_left = -19.0
-margin_top = -22.0
-margin_right = -7.0
-margin_bottom = -10.0
-rect_scale = Vector2( 0.998543, 0.994622 )
-tint_progress = Color( 0.196078, 0.580392, 0.262745, 1 )
-tint_from = Color( 0.941176, 0.219608, 0.219608, 1 )
-tint_to = Color( 0.196078, 0.580392, 0.262745, 1 )
+position = Vector2( -19, -21 )
+tint_from = Color( 0.101961, 0.658824, 0.372549, 1 )
+tint_to = Color( 0.101961, 0.658824, 0.372549, 1 )
 
 [node name="SymbolUI" type="TextureRect" parent="." index="6"]
 margin_left = -8.0
@@ -109,3 +106,15 @@ margin_right = 298.0
 margin_bottom = 299.0
 rect_scale = Vector2( 0.0728439, 0.0728439 )
 texture = ExtResource( 8 )
+
+[node name="UnstallTryAudioPlayer" type="AudioStreamPlayer2D" parent="." index="10"]
+stream = ExtResource( 9 )
+volume_db = 7.0
+
+[node name="StallAudioPlayer" type="AudioStreamPlayer2D" parent="." index="11"]
+stream = ExtResource( 10 )
+
+[connection signal="pile_added" from="." to="Progress" method="start_progress"]
+[connection signal="pile_completed" from="." to="." method="_on_PrinterInteractableArea_pile_completed"]
+[connection signal="pile_completed" from="." to="ReadyCheckmark" method="_on_pile_completed"]
+[connection signal="pile_taken" from="." to="ReadyCheckmark" method="_on_pile_taken"]

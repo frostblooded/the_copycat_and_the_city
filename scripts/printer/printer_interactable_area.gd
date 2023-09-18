@@ -40,6 +40,8 @@ func _process(delta):
 
 func _on_interact():
 	if is_stalled:
+		$UnstallTryAudioPlayer.play()
+
 		if randf() < unsall_chance_per_interact:
 			unstall()
 
@@ -48,21 +50,30 @@ func _on_interact():
 		if not player_inventory.has_items():
 			return
 
-		var pile: Pile = plyer_inventory.pop_item()
+		var item = player_inventory.get_top_item()
+		if item is Pile:
+			player_inventory.pop_item()
+			var took_pile = take_pile(item)
+			if not took_pile:
+				player_inventory.push_item(item)
+		elif item is EmptyPapers:
+			player_inventory.pop_item()
+			refill_paper()
 
-		var took_pile = take_pile(pile)
-
-		if not took_pile:
-			player_inventory.push_item(pile)
 	elif is_ready:
 		return_pile(player_inventory)
 
+
+func refill_paper():
+	print("refilled paper")
+	current_paper = max_paper
 
 func stall():
 	is_stalled = true
 	timer.paused = true
 	$StalledUI.visible = true
 	$Progress.visible = false
+	$StallAudioPlayer.play()
 
 
 func unstall():

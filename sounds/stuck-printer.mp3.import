@@ -11,5 +11,5 @@ dest_files=[ "res://.import/stuck-printer.mp3-23e58e9f2f7ca6cb22ec43031656684d.m
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
