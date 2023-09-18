@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/InteractableArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/printer.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://sounds/printer.mp3" type="AudioStream" id=6]
 [ext_resource path="res://scenes/ProgressBar.tscn" type="PackedScene" id=7]
 [ext_resource path="res://sprites/x_pixel.png" type="Texture" id=8]
+[ext_resource path="res://sounds/hammering.mp3" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.25, 23.5 )
@@ -52,8 +53,8 @@ script = ExtResource( 3 )
 max_paper = 10
 current_paper = -1
 time_per_paper = 1.0
-stall_chance_per_frame = 0.003
-unsall_chance_per_interact = 0.3
+stall_chance_per_frame = 0.005
+unsall_chance_per_interact = 0.2
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )
@@ -109,6 +110,10 @@ margin_right = 298.0
 margin_bottom = 299.0
 rect_scale = Vector2( 0.0728439, 0.0728439 )
 texture = ExtResource( 8 )
+
+[node name="UnstallTryAudioPlayer" type="AudioStreamPlayer2D" parent="." index="10"]
+stream = ExtResource( 9 )
+volume_db = 7.0
 
 [connection signal="pile_added" from="." to="Progress" method="start_progress"]
 [connection signal="pile_completed" from="." to="." method="_on_PrinterInteractableArea_pile_completed"]

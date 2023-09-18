@@ -40,6 +40,8 @@ func _process(delta):
 
 func _on_interact():
 	if is_stalled:
+		$UnstallTryAudioPlayer.play()
+
 		if randf() < unsall_chance_per_interact:
 			unstall()
 
@@ -48,7 +50,7 @@ func _on_interact():
 		if not player_inventory.has_items():
 			return
 
-		var pile: Pile = plyer_inventory.pop_item()
+		var pile: Pile = player_inventory.pop_item()
 
 		var took_pile = take_pile(pile)
 

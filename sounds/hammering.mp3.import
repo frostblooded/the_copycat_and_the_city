@@ -11,5 +11,5 @@ dest_files=[ "res://.import/hammering.mp3-f2410a472c261dde4d26dc3823358ee1.mp3st
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
