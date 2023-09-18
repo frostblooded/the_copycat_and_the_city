@@ -24,14 +24,16 @@ func start():
 
 
 func _on_Timer_timeout():
-	current_pile.set_as_failed()
 	stop_order()
 
 
 func stop_order():
+	current_pile.set_as_failed()
 	current_pile = null
 	is_running = false
 	$Timer.stop()
+	if $PlacementPosition.get_child_count() > 0:
+		$PlacementPosition.remove_item()
 
 
 func complete():
