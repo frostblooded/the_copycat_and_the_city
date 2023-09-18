@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sprites/pile.png" type="Texture" id=1]
 [ext_resource path="res://scripts/pile.gd" type="Script" id=2]
 [ext_resource path="res://sprites/check_pixel.png" type="Texture" id=3]
 [ext_resource path="res://sprites/symbol_1.png" type="Texture" id=4]
 [ext_resource path="res://sprites/x_pixel.png" type="Texture" id=5]
+[ext_resource path="res://sounds/failed-order.mp3" type="AudioStream" id=6]
 
 [node name="Pile" type="Node2D"]
 script = ExtResource( 2 )
@@ -35,3 +36,6 @@ margin_right = 289.0
 margin_bottom = 314.0
 rect_scale = Vector2( 0.0443739, 0.0443739 )
 texture = ExtResource( 5 )
+
+[node name="FailedOrderAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )

@@ -65,6 +65,7 @@ func stall():
 	timer.paused = true
 	$StalledUI.visible = true
 	$Progress.visible = false
+	$StallAudioPlayer.play()
 
 
 func unstall():
