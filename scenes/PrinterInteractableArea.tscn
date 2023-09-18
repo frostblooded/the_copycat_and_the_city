@@ -109,8 +109,3 @@ margin_right = 298.0
 margin_bottom = 299.0
 rect_scale = Vector2( 0.0728439, 0.0728439 )
 texture = ExtResource( 8 )
-
-[connection signal="pile_added" from="." to="Progress" method="start_progress"]
-[connection signal="pile_completed" from="." to="." method="_on_PrinterInteractableArea_pile_completed"]
-[connection signal="pile_completed" from="." to="ReadyCheckmark" method="_on_pile_completed"]
-[connection signal="pile_taken" from="." to="ReadyCheckmark" method="_on_pile_taken"]
