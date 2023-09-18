@@ -4,7 +4,7 @@ signal pile_completed()
 signal pile_taken()
 signal pile_added(time)
 
-export var max_paper = 10
+export var max_paper = 100
 export var current_paper = -1
 export var time_per_paper = 1.0
 
@@ -21,6 +21,7 @@ func _ready():
 		current_paper = max_paper
 	timer.connect("timeout",self, "_on_timer_expire")
 	add_child(timer)
+	connect("pile_added", self, "_on_pile_added")
 
 func _on_interact():
 	var player_inventory = Utils.get_player(get_tree()).get_inventory()
@@ -32,23 +33,20 @@ func _on_interact():
 
 		var took_pile = take_pile(pile)
 
-		if took_pile:
-			$SymbolUI.texture = pile.get_node("SymbolUI").texture
-			emit_signal("pile_added", timer.time_left)
-			$PrinterWorkingAudioPlayer.play()
-			$AnimationPlayer.play("Shake")
-		else:
+		if not took_pile:
 			player_inventory.push_item(pile)
-	else:
-		if is_ready:
-			var pile: Pile = inventory.get_child(0) as Pile
+	elif is_ready:
+		return_pile(player_inventory)
 
-			if player_inventory.can_push_item():
-				$SymbolUI.texture = null
-				pile.set_as_copied()
-				inventory.remove_child(pile)
-				player_inventory.push_item(pile)
-				emit_signal("pile_taken")
+func return_pile(player_inventory):
+	var pile: Pile = inventory.get_child(0) as Pile
+
+	if player_inventory.can_push_item():
+		$SymbolUI.texture = null
+		pile.set_as_copied()
+		inventory.remove_child(pile)
+		player_inventory.push_item(pile)
+		emit_signal("pile_taken")
 
 
 func take_pile(pile): 
@@ -69,6 +67,7 @@ func take_pile(pile):
 	timer.one_shot = true
 	timer.start()
 	is_ready = false
+	emit_signal("pile_added", timer.time_left)
 	return true
 
 func _on_timer_expire():
@@ -76,3 +75,9 @@ func _on_timer_expire():
 	$PrinterWorkingAudioPlayer.stop()
 	$AnimationPlayer.stop()
 	emit_signal("pile_completed")
+
+func _on_pile_added(time):
+	var pile: Pile = inventory.get_child(0) as Pile
+	$SymbolUI.texture = pile.get_node("SymbolUI").texture
+	$PrinterWorkingAudioPlayer.play()
+	$AnimationPlayer.play("Shake")
