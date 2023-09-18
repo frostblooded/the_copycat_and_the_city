@@ -89,7 +89,7 @@ animations = [ {
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 8.0
-height = 8.0
+height = 2.0
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -103,14 +103,15 @@ playing = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, 2 )
+position = Vector2( 0, 6 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 2 )
+position = Vector2( 0, 6 )
 shape = SubResource( 1 )
 
 [node name="InteractUI" type="TextureRect" parent="."]
+visible = false
 margin_left = 11.0
 margin_top = -11.0
 margin_right = 89.0
@@ -139,4 +140,3 @@ script = ExtResource( 5 )
 
 [node name="StepAudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
-volume_db = -15.0
