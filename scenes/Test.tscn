@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/main.gd" type="Script" id=1]
+[ext_resource path="res://scenes/DeskInteractableArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/TableInteractableArea.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/PrinterInteractableArea.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/MandatoryLevelNodes.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/MandatoryLevelUI.tscn" type="PackedScene" id=7]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MandatoryLevelNodes" parent="." instance=ExtResource( 6 )]
+
+[node name="LevelContents" type="YSort" parent="."]
+
+[node name="Player" parent="LevelContents" instance=ExtResource( 4 )]
+position = Vector2( 143, 110 )
+
+[node name="Desk" parent="LevelContents" instance=ExtResource( 2 )]
+position = Vector2( 96, 46 )
+
+[node name="Desk2" parent="LevelContents" instance=ExtResource( 2 )]
+position = Vector2( 183, 45 )
+
+[node name="Desk3" parent="LevelContents" instance=ExtResource( 2 )]
+position = Vector2( 221, 139 )
+
+[node name="TableInteractableArea" parent="LevelContents" instance=ExtResource( 3 )]
+position = Vector2( 74, 210 )
+
+[node name="PrinterInteractableArea" parent="LevelContents" instance=ExtResource( 5 )]
+position = Vector2( 131, 210 )
+
+[node name="MandatoryLevelUI" parent="." instance=ExtResource( 7 )]

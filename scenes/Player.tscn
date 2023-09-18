@@ -111,6 +111,7 @@ position = Vector2( 0, 6 )
 shape = SubResource( 1 )
 
 [node name="InteractUI" type="TextureRect" parent="."]
+visible = false
 margin_left = 11.0
 margin_top = -11.0
 margin_right = 89.0
