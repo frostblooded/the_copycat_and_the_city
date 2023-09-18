@@ -251,6 +251,9 @@ position = Vector2( 208, 71 )
 
 [node name="PrinterInteractableArea" parent="LevelContents" instance=ExtResource( 3 )]
 position = Vector2( 128, 239 )
+max_paper = null
+current_paper = null
+time_per_paper = null
 
 [node name="TableInteractableArea" parent="LevelContents" instance=ExtResource( 5 )]
 position = Vector2( 80, 239 )

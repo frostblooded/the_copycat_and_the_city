@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/hammering.mp3-f2410a472c261dde4d26dc3823358ee1.mp3str"
+
+[deps]
+
+source_file="res://sounds/hammering.mp3"
+dest_files=[ "res://.import/hammering.mp3-f2410a472c261dde4d26dc3823358ee1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

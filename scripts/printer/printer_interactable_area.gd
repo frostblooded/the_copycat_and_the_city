@@ -48,7 +48,7 @@ func _on_interact():
 		if not player_inventory.has_items():
 			return
 
-		var pile: Pile = player_inventory.pop_item()
+		var pile: Pile = plyer_inventory.pop_item()
 
 		var took_pile = take_pile(pile)
 

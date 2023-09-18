@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/InteractableArea.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/papers_stack.png" type="Texture" id=2]
+[ext_resource path="res://scripts/paper_stock_interactable_area.gd" type="Script" id=3]
+[ext_resource path="res://scenes/EmptyPapers.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 17, 27.5 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12.5, 17 )
+
+[node name="PaperStockInteractableArea" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+pile_scene = ExtResource( 4 )
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 4, 0.5 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2( -0.5, 0 )
+shape = SubResource( 1 )
