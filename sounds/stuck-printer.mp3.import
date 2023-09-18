@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/stuck-printer.mp3-23e58e9f2f7ca6cb22ec43031656684d.mp3str"
+
+[deps]
+
+source_file="res://sounds/stuck-printer.mp3"
+dest_files=[ "res://.import/stuck-printer.mp3-23e58e9f2f7ca6cb22ec43031656684d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
