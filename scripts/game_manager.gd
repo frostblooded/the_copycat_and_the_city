@@ -9,6 +9,7 @@ func _process(_delta):
 func end_game():
 	var end_game_screen: Control = get_tree().root.find_node("EndGameScreen", true, false)
 	end_game_screen.visible = true
+	end_game_screen.get_node("NextLevelButton").next_level_scene = get_tree().root.find_node("MandatoryLevelNodes", true, false).next_level_scene
 	var score: int = get_tree().root.find_node("ScoreManager", true, false).score
 	end_game_screen.get_node("ScoreLabel").text = "Score: {score}".format({"score": score})
 	$EndGameAudioPlayer.play()
