@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/InteractableArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/printer.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scripts/printer/printer_check_mark.gd" type="Script" id=5]
 [ext_resource path="res://sounds/printer.mp3" type="AudioStream" id=6]
 [ext_resource path="res://scenes/ProgressBar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://sprites/x_pixel.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.25, 23.5 )
@@ -51,6 +52,8 @@ script = ExtResource( 3 )
 max_paper = 10
 current_paper = -1
 time_per_paper = 1.0
+stall_chance_per_frame = 0.005
+unsall_chance_per_interact = 0.3
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )
@@ -97,6 +100,15 @@ volume_db = 5.0
 playback_speed = 1.5
 anims/RESET = SubResource( 3 )
 anims/Shake = SubResource( 4 )
+
+[node name="StalledUI" type="TextureRect" parent="." index="9"]
+visible = false
+margin_left = -13.0
+margin_top = -13.0
+margin_right = 298.0
+margin_bottom = 299.0
+rect_scale = Vector2( 0.0728439, 0.0728439 )
+texture = ExtResource( 8 )
 
 [connection signal="pile_added" from="." to="Progress" method="start_progress"]
 [connection signal="pile_completed" from="." to="." method="_on_PrinterInteractableArea_pile_completed"]
