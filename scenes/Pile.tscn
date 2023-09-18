@@ -32,9 +32,8 @@ texture = ExtResource( 3 )
 visible = false
 margin_left = -22.0
 margin_top = 2.0
-margin_right = 289.0
-margin_bottom = 314.0
-rect_scale = Vector2( 0.0443739, 0.0443739 )
+margin_right = -8.0
+margin_bottom = 16.0
 texture = ExtResource( 5 )
 
 [node name="FailedOrderAudioPlayer" type="AudioStreamPlayer2D" parent="."]

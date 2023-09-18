@@ -29,10 +29,9 @@ func _on_Timer_timeout():
 
 func stop_order():
 	current_pile.set_as_failed()
-	current_pile = null
 	is_running = false
 	$Timer.stop()
-	if $PlacementPosition.get_child_count() > 0:
+	if $PlacementPosition.is_reserved:
 		$PlacementPosition.remove_item()
 
 
