@@ -34,12 +34,7 @@ func _ready():
 
 func _process(delta):
 	if is_copying():
-		var val: float = randf()
-		var val2: float = stall_chance_per_frame
-		print("Start")
-		print(val)
-		print(val2)
-		if val < val2:
+		if randf() < stall_chance_per_frame:
 			stall()
 
 

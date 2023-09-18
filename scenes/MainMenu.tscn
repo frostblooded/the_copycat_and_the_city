@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Level1.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://sprites/menu_background.jpg" type="Texture" id=4]
 [ext_resource path="res://sprites/title.png" type="Texture" id=5]
 [ext_resource path="res://UITheme.tres" type="Theme" id=6]
+[ext_resource path="res://scenes/StartLevelButton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Level2.tscn" type="PackedScene" id=8]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 1 )
@@ -30,17 +32,6 @@ texture = ExtResource( 4 )
 expand = true
 stretch_mode = 1
 
-[node name="StartGameButton" type="Button" parent="Control"]
-margin_left = 83.0
-margin_top = 130.0
-margin_right = 166.0
-margin_bottom = 150.0
-theme = ExtResource( 6 )
-text = "Start Game"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
 [node name="QuitGameButton" type="Button" parent="Control"]
 margin_left = 83.0
 margin_top = 166.0
@@ -60,9 +51,24 @@ margin_bottom = 165.0
 rect_scale = Vector2( 0.427971, 0.427971 )
 texture = ExtResource( 5 )
 
+[node name="Level1Button" parent="Control" instance=ExtResource( 7 )]
+margin_left = 64.0
+margin_top = 136.0
+margin_right = 120.0
+margin_bottom = 156.0
+text = "Level 1"
+next_level_scene = ExtResource( 2 )
+
+[node name="Level2Button" parent="Control" instance=ExtResource( 7 )]
+margin_left = 128.0
+margin_top = 136.0
+margin_right = 184.0
+margin_bottom = 156.0
+text = "Level 2"
+next_level_scene = ExtResource( 8 )
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
 
-[connection signal="pressed" from="Control/StartGameButton" to="." method="_on_StartGameButton_pressed"]
 [connection signal="pressed" from="Control/QuitGameButton" to="." method="_on_QuitGameButton_pressed"]
