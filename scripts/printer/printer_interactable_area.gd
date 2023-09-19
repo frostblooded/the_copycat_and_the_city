@@ -2,6 +2,8 @@ extends InteractableArea
 
 signal pile_completed()
 signal pile_taken()
+signal stalled()
+signal unstalled()
 signal pile_added(time)
 
 export var max_paper = 100
@@ -33,9 +35,9 @@ func _ready():
 	connect("pile_added", self, "_on_pile_added")
 
 
-func _process(delta):
+func _process(_delta):
 	if is_copying():
-		if can_stall and randf() < stall_chance_per_frame:
+		if can_stall and not is_stalled and randf() < stall_chance_per_frame:
 			stall()
 
 
@@ -72,16 +74,13 @@ func refill_paper():
 func stall():
 	is_stalled = true
 	timer.paused = true
-	$StalledUI.visible = true
-	$Progress.visible = false
-	$StallAudioPlayer.play()
+	emit_signal("stalled")
 
 
 func unstall():
 	is_stalled = false
 	timer.paused = false
-	$StalledUI.visible = false
-	$Progress.visible = true
+	emit_signal("unstalled")
 
 
 func return_pile(player_inventory):

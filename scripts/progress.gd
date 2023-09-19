@@ -2,6 +2,7 @@ extends Node2D
 
 var total_time = 0
 var elapsed_time = 0
+var paused = false
 export var inverse = false
 export var tint_from = Color(1, 1, 1, 1)
 export var tint_to = Color(1, 1, 1, 1)
@@ -14,17 +15,24 @@ func _ready():
 	visible = false
 
 func start_progress(time):
+	paused = false
 	total_time = time
 	elapsed_time = 0
 	visible = true
 	tp.value = 100 if inverse else 0
+
+func pause():
+	paused = true
+
+func resume():
+	paused = false
 
 func complete():
 	visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if not visible:
+	if not visible or paused:
 		return
 
 	elapsed_time += delta
