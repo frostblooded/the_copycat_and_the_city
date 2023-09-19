@@ -1,92 +1,33 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/MandatoryLevelNodes.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/MandatoryLevelUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/PrinterInteractableArea.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/DeskInteractableArea.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/TableInteractableArea.tscn" type="PackedScene" id=5]
-[ext_resource path="res://tiles/LevelTileset.tres" type="TileSet" id=6]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scripts/main.gd" type="Script" id=8]
 [ext_resource path="res://scenes/ShredderInteractableArea.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scenes/Persons/Person.tscn" type="PackedScene" id=16]
 
-[sub_resource type="RectangleShape2D" id=51]
-extents = Vector2( 129, 10 )
+[node name="Main" instance=ExtResource( 1 )]
 
-[sub_resource type="Curve2D" id=52]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 224, 199, 0, 0, 0, 0, 120, 199 )
-}
+[node name="OfficeItems" parent="LevelContents" index="2"]
+tile_data = PoolIntArray( 262160, 4, 0, 327685, 6, 0, 1179655, 7, 0, 1638429, 5, 0 )
 
-[node name="Main" type="Node2D"]
-position = Vector2( 0, 2 )
-script = ExtResource( 8 )
-
-[node name="MandatoryLevelNodes" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, -1 )
-
-[node name="LevelContents" type="YSort" parent="."]
-
-[node name="DeskInteractableArea" parent="LevelContents" instance=ExtResource( 4 )]
-position = Vector2( 208, 71 )
-
-[node name="PrinterInteractableArea" parent="LevelContents" instance=ExtResource( 3 )]
-position = Vector2( 128, 239 )
-
-[node name="TableInteractableArea" parent="LevelContents" instance=ExtResource( 5 )]
-position = Vector2( 80, 239 )
-
-[node name="TileMap" type="TileMap" parent="LevelContents"]
-tile_set = ExtResource( 6 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 1703961, 4, 0 )
-
-[node name="TileMap2" type="TileMap" parent="LevelContents"]
-tile_set = ExtResource( 6 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( 0, 3, 0, 7, 2, 0, 65536, 3, 0, 65543, 2, 0, 131072, 3, 0, 131079, 2, 0, 196608, 3, 0, 196615, 2, 0, 262144, 3, 0, 262151, 2, 0, 327680, 3, 0, 327687, 2, 0, 393216, 3, 0, 393223, 2, 0, 458752, 3, 0, 458759, 2, 0 )
-
-[node name="TileMapSmaller" type="TileMap" parent="LevelContents"]
-tile_set = ExtResource( 6 )
-cell_size = Vector2( 8, 8 )
-show_collision = true
-format = 1
-tile_data = PoolIntArray( 15, 4, 0, 65538, 6, 0, 917504, 7, 0, 1376284, 5, 0 )
-
-[node name="ShredderInteractableArea" parent="LevelContents" instance=ExtResource( 14 )]
-position = Vector2( 176, 239 )
-
-[node name="Player" parent="LevelContents" instance=ExtResource( 7 )]
+[node name="Player" parent="LevelContents" index="3"]
 position = Vector2( 16, 199 )
 
-[node name="DeskInteractableArea2" parent="LevelContents" instance=ExtResource( 4 )]
-position = Vector2( 88, 79 )
+[node name="DeskInteractableArea" parent="LevelContents" index="5" instance=ExtResource( 4 )]
+position = Vector2( 85, 79 )
 
-[node name="DeskInteractableArea3" parent="LevelContents" instance=ExtResource( 4 )]
-position = Vector2( 192, 143 )
+[node name="DeskInteractableArea2" parent="LevelContents" index="6" instance=ExtResource( 4 )]
+position = Vector2( 205, 73 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="LevelContents"]
+[node name="DeskInteractableArea3" parent="LevelContents" index="7" instance=ExtResource( 4 )]
+position = Vector2( 187, 143 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelContents/StaticBody2D"]
-position = Vector2( 127, 263 )
-shape = SubResource( 51 )
+[node name="PrinterInteractableArea" parent="LevelContents" index="8" instance=ExtResource( 3 )]
+position = Vector2( 128, 239 )
 
-[node name="Path2D" type="Path2D" parent="LevelContents"]
-curve = SubResource( 52 )
+[node name="ShredderInteractableArea" parent="LevelContents" index="9" instance=ExtResource( 14 )]
+position = Vector2( 175, 239 )
 
-[node name="Person" parent="LevelContents/Path2D" instance=ExtResource( 16 )]
-position = Vector2( 224, 199 )
-
-[node name="Person" parent="LevelContents" instance=ExtResource( 16 )]
-position = Vector2( 73, 57 )
-
-[node name="Person2" parent="LevelContents" instance=ExtResource( 16 )]
-position = Vector2( 193, 48 )
-
-[node name="Person3" parent="LevelContents" instance=ExtResource( 16 )]
-position = Vector2( 177, 119 )
-
-[node name="MandatoryLevelUI" parent="." instance=ExtResource( 2 )]
+[node name="TableInteractableArea" parent="LevelContents" index="10" instance=ExtResource( 5 )]
+position = Vector2( 79, 239 )

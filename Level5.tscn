@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/BaseLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Persons/Person.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ShredderInteractableArea.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/PaperStockInteractableArea.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/TableInteractableArea.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/PrinterInteractableArea.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/DeskInteractableArea.tscn" type="PackedScene" id=7]
+[ext_resource path="res://tiles/LevelTileset.tres" type="TileSet" id=8]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 50, 59, 0, 0, 0, 0, 141, 61, 0, 0, 0, 0, 140, 136, 0, 0, 0, 0, 50, 135 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 116, 179, 0, 0, 0, 0, 196, 178, 0, 0, 0, 0, 196, 74 )
+}
+
+[node name="Main2" instance=ExtResource( 1 )]
+
+[node name="BackWall" parent="LevelContents" index="0"]
+tile_data = PoolIntArray( 0, 0, 0, 1, 38, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 37, 0, 7, 0, 0, 1703961, 4, 0 )
+
+[node name="OfficeItems" parent="LevelContents" index="2"]
+tile_data = PoolIntArray( 655389, 21, 0, 851997, 13, 0, 1048605, 21, 0, 1114116, 12, 0, 1310746, 12, 0, 1572893, 36, 0, 1900546, 40, 0, 1900562, 4, 0, 1966095, 5, 0, 1966101, 41, 0 )
+
+[node name="OnTableItems" type="TileMap" parent="LevelContents" index="3"]
+z_index = 1
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 8, 8 )
+centered_textures = true
+format = 1
+tile_data = PoolIntArray( 589853, 23, 0, 983069, 33, 0, 1114141, 23, 0 )
+
+[node name="OnTheFloorItems" type="TileMap" parent="LevelContents" index="4"]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 8, 8 )
+centered_textures = true
+format = 1
+tile_data = PoolIntArray( 393223, 10, 0, 458774, 10, 0, 786447, 10, 0, 917528, 10, 0, 1245202, 10, 0, 1572868, 10, 0, 1769497, 10, 0, 1835017, 11, 0 )
+
+[node name="Player" parent="LevelContents" index="5"]
+position = Vector2( 232, 223 )
+
+[node name="PrinterInteractableArea" parent="LevelContents" index="7" instance=ExtResource( 6 )]
+position = Vector2( 176, 31 )
+
+[node name="ShredderInteractableArea" parent="LevelContents" index="8" instance=ExtResource( 3 )]
+position = Vector2( 216, 31 )
+
+[node name="TableInteractableArea" parent="LevelContents" index="9" instance=ExtResource( 5 )]
+position = Vector2( 112, 31 )
+
+[node name="DeskInteractableArea" parent="LevelContents" index="10" instance=ExtResource( 7 )]
+position = Vector2( 72, 176 )
+
+[node name="DeskInteractableArea2" parent="LevelContents" index="11" instance=ExtResource( 7 )]
+position = Vector2( 48, 103 )
+
+[node name="PaperStockInteractableArea" parent="LevelContents" index="12" instance=ExtResource( 4 )]
+position = Vector2( 20, 47 )
+
+[node name="Path2D" type="Path2D" parent="LevelContents" index="13"]
+curve = SubResource( 1 )
+
+[node name="Person" parent="LevelContents/Path2D" index="0" instance=ExtResource( 2 )]
+position = Vector2( 53, 68 )
+
+[node name="Path2D2" type="Path2D" parent="LevelContents" index="14"]
+curve = SubResource( 2 )
+
+[node name="Person" parent="LevelContents/Path2D2" index="0" instance=ExtResource( 2 )]

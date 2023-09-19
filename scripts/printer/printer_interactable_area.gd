@@ -9,6 +9,7 @@ export var current_paper = -1
 export var time_per_paper = 1.0
 export var stall_chance_per_frame: float = 0.001
 export var unsall_chance_per_interact: float = 0.3
+export var can_stall: bool = false
 
 var timer: Timer = Timer.new()
 var is_ready = false
@@ -34,7 +35,7 @@ func _ready():
 
 func _process(delta):
 	if is_copying():
-		if randf() < stall_chance_per_frame:
+		if can_stall and randf() < stall_chance_per_frame:
 			stall()
 
 
