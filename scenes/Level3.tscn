@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/PrinterInteractableArea.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/Persons/Person.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/DeskInteractableArea.tscn" type="PackedScene" id=6]
 [ext_resource path="res://tiles/LevelTileset.tres" type="TileSet" id=7]
+[ext_resource path="res://scenes/Level4.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -19,6 +20,9 @@ _data = {
 }
 
 [node name="Level3" instance=ExtResource( 1 )]
+
+[node name="MandatoryLevelNodes" parent="." index="0"]
+next_level_scene = ExtResource( 8 )
 
 [node name="OfficeItems" parent="LevelContents" index="2"]
 cell_y_sort = true

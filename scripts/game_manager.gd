@@ -2,6 +2,8 @@ extends Node2D
 class_name GameManager
 
 var wanted_easier_orders: int = 0
+var successfully_completed_orders_in_a_row: int = 0
+var wanted_harder_orders: int = 0
 
 func _process(_delta):
 	var time_left_label: Label = get_tree().root.find_node("TimeLeftLabel", true, false) as Label

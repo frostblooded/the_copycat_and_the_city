@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/BaseLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Level2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/PrinterInteractableArea.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/DeskInteractableArea.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/ShredderInteractableArea.tscn" type="PackedScene" id=14]
@@ -9,6 +10,7 @@
 
 [node name="MandatoryLevelNodes" parent="." index="0"]
 position = Vector2( 0, -1 )
+next_level_scene = ExtResource( 2 )
 
 [node name="OfficeItems" parent="LevelContents" index="2"]
 tile_data = PoolIntArray( 327703, 6, 0, 917526, 8, 0, 1179670, 7, 0, 1245187, 9, 0, 1966103, 4, 0 )
