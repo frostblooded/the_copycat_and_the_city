@@ -29,7 +29,6 @@ position = Vector2( 187, 143 )
 
 [node name="PrinterInteractableArea" parent="LevelContents" index="8" instance=ExtResource( 3 )]
 position = Vector2( 128, 239 )
-unstall_chance_per_interact = 0.3
 
 [node name="ShredderInteractableArea" parent="LevelContents" index="9" instance=ExtResource( 14 )]
 position = Vector2( 175, 239 )

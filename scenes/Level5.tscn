@@ -25,7 +25,7 @@ _data = {
 tile_data = PoolIntArray( 0, 0, 0, 1, 38, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 37, 0, 7, 0, 0, 1703961, 4, 0 )
 
 [node name="OfficeItems" parent="LevelContents" index="2"]
-tile_data = PoolIntArray( 655389, 21, 0, 720918, 12, 0, 851997, 13, 0, 1048605, 21, 0, 1114116, 12, 0, 1310746, 12, 0, 1572893, 36, 0, 1900546, 40, 0, 1900562, 4, 0, 1966095, 5, 0, 1966101, 41, 0 )
+tile_data = PoolIntArray( 655389, 21, 0, 720918, 12, 0, 851997, 13, 0, 1048605, 21, 0, 1114116, 12, 0, 1310745, 12, 0, 1572893, 36, 0, 1835017, 11, 0, 1900546, 40, 0, 1900562, 4, 0, 1966095, 5, 0, 1966101, 41, 0 )
 
 [node name="OnTableItems" type="TileMap" parent="LevelContents" index="3"]
 z_index = 1
@@ -38,9 +38,10 @@ tile_data = PoolIntArray( 589853, 23, 0, 983069, 33, 0, 1114141, 23, 0 )
 [node name="OnTheFloorItems" type="TileMap" parent="LevelContents" index="4"]
 tile_set = ExtResource( 8 )
 cell_size = Vector2( 8, 8 )
+show_collision = true
 centered_textures = true
 format = 1
-tile_data = PoolIntArray( 393223, 10, 0, 458774, 10, 0, 786447, 10, 0, 917528, 10, 0, 1245202, 10, 0, 1572868, 10, 0, 1769497, 10, 0, 1835017, 11, 0 )
+tile_data = PoolIntArray( 393223, 10, 0, 458774, 10, 0, 786447, 10, 0, 917528, 10, 0, 1245202, 10, 0, 1572868, 10, 0, 1769497, 10, 0 )
 
 [node name="Player" parent="LevelContents" index="5"]
 position = Vector2( 227, 232 )

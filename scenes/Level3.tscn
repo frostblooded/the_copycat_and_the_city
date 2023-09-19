@@ -25,7 +25,6 @@ _data = {
 next_level_scene = ExtResource( 8 )
 
 [node name="OfficeItems" parent="LevelContents" index="2"]
-cell_y_sort = true
 tile_data = PoolIntArray( 262173, 5, 0, 720898, 13, 0, 720907, 12, 0, 786442, 12, 0, 786444, 12, 0, 851995, 11, 0, 917521, 12, 0, 1376258, 9, 0, 1900570, 24, 0 )
 
 [node name="OnTablesItems" type="TileMap" parent="LevelContents" index="3"]
@@ -42,27 +41,28 @@ position = Vector2( 20, 209 )
 [node name="Path2D" type="Path2D" parent="LevelContents" index="6"]
 curve = SubResource( 1 )
 
-[node name="Person" parent="LevelContents/Path2D" index="0" instance=ExtResource( 5 )]
-position = Vector2( 32, 71 )
+[node name="Person" parent="LevelContents" index="7" instance=ExtResource( 5 )]
+position = Vector2( 35, 72 )
+path_node = NodePath("../Path2D")
 
-[node name="PrinterInteractableArea" parent="LevelContents" index="7" instance=ExtResource( 2 )]
+[node name="PrinterInteractableArea" parent="LevelContents" index="8" instance=ExtResource( 2 )]
 position = Vector2( 101, 31 )
-unstall_chance_per_interact = 0.3
 
-[node name="ShredderInteractableArea" parent="LevelContents" index="8" instance=ExtResource( 3 )]
+[node name="ShredderInteractableArea" parent="LevelContents" index="9" instance=ExtResource( 3 )]
 position = Vector2( 144, 31 )
 
-[node name="TableInteractableArea" parent="LevelContents" index="9" instance=ExtResource( 4 )]
+[node name="TableInteractableArea" parent="LevelContents" index="10" instance=ExtResource( 4 )]
 position = Vector2( 40, 31 )
 
-[node name="DeskInteractableArea" parent="LevelContents" index="10" instance=ExtResource( 6 )]
+[node name="DeskInteractableArea" parent="LevelContents" index="11" instance=ExtResource( 6 )]
 position = Vector2( 89, 198 )
 
-[node name="DeskInteractableArea2" parent="LevelContents" index="11" instance=ExtResource( 6 )]
+[node name="DeskInteractableArea2" parent="LevelContents" index="12" instance=ExtResource( 6 )]
 position = Vector2( 208, 136 )
 
-[node name="Path2D2" type="Path2D" parent="LevelContents" index="12"]
+[node name="Path2D2" type="Path2D" parent="LevelContents" index="13"]
 curve = SubResource( 2 )
 
-[node name="Person" parent="LevelContents/Path2D2" index="0" instance=ExtResource( 5 )]
-position = Vector2( 225, 203 )
+[node name="Person2" parent="LevelContents" index="14" instance=ExtResource( 5 )]
+position = Vector2( 223, 203 )
+path_node = NodePath("../Path2D2")

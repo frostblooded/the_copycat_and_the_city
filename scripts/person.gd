@@ -33,6 +33,8 @@ func _ready():
 		path_follow = path_follow_scene.instance()
 		path.add_child(path_follow)
 		path_follow.get_node("RemoteTransform2D").remote_path = get_path()
+		if move_direction == 1:
+			path_follow.set_unit_offset(1)
 	else:
 		can_walk = false
 
