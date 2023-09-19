@@ -16,7 +16,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 116, 179, 0, 0, 0, 0, 196, 178, 0, 0, 0, 0, 196, 74 )
+"points": PoolVector2Array( 0, 0, 0, 0, 116, 179, 0, 0, 0, 0, 196, 178, 0, 0, 0, 0, 196, 54 )
 }
 
 [node name="Main2" instance=ExtResource( 1 )]
@@ -67,10 +67,10 @@ position = Vector2( 20, 47 )
 curve = SubResource( 1 )
 
 [node name="Person" parent="LevelContents/Path2D" index="0" instance=ExtResource( 2 )]
-position = Vector2( 53, 61 )
+position = Vector2( 50, 59 )
 
 [node name="Path2D2" type="Path2D" parent="LevelContents" index="14"]
 curve = SubResource( 2 )
 
 [node name="Person" parent="LevelContents/Path2D2" index="0" instance=ExtResource( 2 )]
-position = Vector2( 116, 180 )
+position = Vector2( 116, 179 )

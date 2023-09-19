@@ -10,7 +10,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 43, 71, 0, 0, 0, 0, 104, 71, 0, 0, 0, 0, 104, 175, 0, 0, 0, 0, 32, 175, 0, 0, 0, 0, 32, 239, 0, 0, 0, 0, 168, 239, 0, 0, 0, 0, 168, 79 )
+"points": PoolVector2Array( 0, 0, 0, 0, 43, 71, 0, 0, 0, 0, 104, 71, 0, 0, 0, 0, 104, 175, 0, 0, 0, 0, 32, 175, 0, 0, 0, 0, 33, 229, 0, 0, 0, 0, 168, 229, 0, 0, 0, 0, 168, 79 )
 }
 
 [node name="Level4" instance=ExtResource( 1 )]
@@ -23,7 +23,7 @@ can_stall = true
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 38, 0, 7, 0, 0, 1703961, 4, 0 )
 
 [node name="OfficeItems" parent="LevelContents" index="3"]
-tile_data = PoolIntArray( 458753, 35, 0, 458781, 36, 0, 917510, 8, 0, 1048594, 12, 0, 1310746, 11, 0, 1769483, 12, 0, 1966107, 24, 0 )
+tile_data = PoolIntArray( 458753, 35, 0, 458781, 36, 0, 917510, 8, 0, 1048594, 12, 0, 1245210, 11, 0, 1769483, 12, 0, 1900569, 24, 0 )
 
 [node name="OnTableItems" type="TileMap" parent="LevelContents" index="4"]
 z_index = 1
@@ -31,7 +31,7 @@ tile_set = ExtResource( 7 )
 cell_size = Vector2( 8, 8 )
 centered_textures = true
 format = 1
-tile_data = PoolIntArray( 1835036, 22, 0, 1966082, 4, 0, 1966105, 23, 0, 2621495, 23, 0 )
+tile_data = PoolIntArray( 1769498, 22, 0, 1900546, 4, 0, 1900567, 23, 0, 2621495, 23, 0 )
 
 [node name="OnTheFloorItems" type="TileMap" parent="LevelContents" index="5"]
 tile_set = ExtResource( 7 )
@@ -53,7 +53,7 @@ position = Vector2( 129, 31 )
 position = Vector2( 48, 141 )
 
 [node name="DeskInteractableArea2" parent="LevelContents" index="11" instance=ExtResource( 4 )]
-position = Vector2( 208, 191 )
+position = Vector2( 208, 180 )
 
 [node name="Path2D" type="Path2D" parent="LevelContents" index="12"]
 curve = SubResource( 1 )
