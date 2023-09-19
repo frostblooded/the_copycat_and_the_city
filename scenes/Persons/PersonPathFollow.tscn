@@ -1,0 +1,6 @@
+[gd_scene format=2]
+
+[node name="PathFollow2D" type="PathFollow2D"]
+rotate = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]

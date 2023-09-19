@@ -10,7 +10,7 @@ export var max_paper = 100
 export var current_paper = -1
 export var time_per_paper = 1.0
 export var stall_chance_per_frame: float = 0.001
-export var unsall_chance_per_interact: float = 0.3
+export var unstall_chance_per_interact: float = 0.3
 export var can_stall: bool = false
 
 var timer: Timer = Timer.new()
@@ -45,7 +45,7 @@ func _on_interact():
 	if is_stalled:
 		$UnstallTryAudioPlayer.play()
 
-		if randf() < unsall_chance_per_interact:
+		if randf() < unstall_chance_per_interact:
 			unstall()
 
 	var player_inventory = Utils.get_player(get_tree()).get_inventory()

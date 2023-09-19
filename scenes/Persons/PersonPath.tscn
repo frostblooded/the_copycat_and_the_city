@@ -10,6 +10,8 @@ _data = {
 [node name="PersonPath" type="Node2D"]
 
 [node name="Person" parent="." instance=ExtResource( 1 )]
+walk_cooldown = null
+move_direction = null
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource( 1 )

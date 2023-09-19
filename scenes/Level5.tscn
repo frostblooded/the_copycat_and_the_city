@@ -11,7 +11,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 50, 59, 0, 0, 0, 0, 141, 61, 0, 0, 0, 0, 140, 136, 0, 0, 0, 0, 50, 135 )
+"points": PoolVector2Array( 0, 0, 0, 0, 50, 59, 0, 0, 0, 0, 98.0916, 59.6273, 0, 0, 0, 0, 141, 61, 0, 0, 0, 0, 140, 136, 0, 0, 0, 0, 50, 135 )
 }
 
 [sub_resource type="Curve2D" id=2]
@@ -43,7 +43,7 @@ format = 1
 tile_data = PoolIntArray( 393223, 10, 0, 458774, 10, 0, 786447, 10, 0, 917528, 10, 0, 1245202, 10, 0, 1572868, 10, 0, 1769497, 10, 0, 1835017, 11, 0 )
 
 [node name="Player" parent="LevelContents" index="5"]
-position = Vector2( 125, 148 )
+position = Vector2( 227, 232 )
 
 [node name="PrinterInteractableArea" parent="LevelContents" index="7" instance=ExtResource( 6 )]
 position = Vector2( 176, 31 )
@@ -63,24 +63,16 @@ position = Vector2( 48, 103 )
 [node name="PaperStockInteractableArea" parent="LevelContents" index="12" instance=ExtResource( 4 )]
 position = Vector2( 20, 47 )
 
-[node name="Person" parent="LevelContents" index="13" instance=ExtResource( 2 )]
-position = Vector2( 50, 59 )
-rotation = 0.0219749
-scale = Vector2( 1, 1 )
-
-[node name="Path2D" type="Path2D" parent="LevelContents" index="14"]
+[node name="Path2D" type="Path2D" parent="LevelContents" index="13"]
 curve = SubResource( 1 )
 
-[node name="PathFollow2D" type="PathFollow2D" parent="LevelContents/Path2D" index="0"]
-position = Vector2( 50, 59 )
-rotation = 0.0219749
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="LevelContents/Path2D/PathFollow2D" index="0"]
-remote_path = NodePath("../../../Person")
-
-[node name="Path2D2" type="Path2D" parent="LevelContents" index="15"]
+[node name="Path2D2" type="Path2D" parent="LevelContents" index="14"]
 curve = SubResource( 2 )
 
-[node name="Person" parent="LevelContents/Path2D2" index="0" instance=ExtResource( 2 )]
-position = Vector2( 176.905, 47 )
-offset = 222.04
+[node name="Person" parent="LevelContents" index="15" instance=ExtResource( 2 )]
+position = Vector2( 56, 54 )
+path_node = NodePath("../Path2D")
+
+[node name="Person2" parent="LevelContents" index="16" instance=ExtResource( 2 )]
+position = Vector2( 115, 150 )
+path_node = NodePath("../Path2D2")

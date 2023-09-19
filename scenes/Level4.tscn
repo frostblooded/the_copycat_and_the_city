@@ -21,6 +21,7 @@ next_level_scene = ExtResource( 8 )
 
 [node name="PrinterInteractableArea" parent="LevelContents" index="0" instance=ExtResource( 2 )]
 position = Vector2( 76, 31 )
+unstall_chance_per_interact = 0.3
 can_stall = true
 
 [node name="BackWall" parent="LevelContents" index="1"]
@@ -64,5 +65,4 @@ curve = SubResource( 1 )
 
 [node name="Person" parent="LevelContents/Path2D" index="0" instance=ExtResource( 3 )]
 position = Vector2( 168, 79 )
-offset = 601.617
 move_direction = 1

@@ -1,4 +1,4 @@
-extends PathFollow2D
+extends Node2D
 
 enum State { IDLE, WALK }
 enum Idle { IDLE, PHONE }
@@ -8,7 +8,11 @@ export var phone_chance = 0.01
 export var walk_chance = 0.01
 export var walk_cooldown = 1
 export var speed = 10
+export var path_follow_scene: PackedScene
+export(NodePath) var path_node
 export(Array, SpriteFrames) var people
+
+var path_follow: PathFollow2D = null
 
 var state = State.IDLE
 
@@ -23,7 +27,13 @@ func _ready():
 	#TODO: move this to the main script
 	randomize()
 
-	if not get_parent() is Path2D:
+	var path = get_node(path_node)
+	if path != null:
+		can_walk = true
+		path_follow = path_follow_scene.instance()
+		path.add_child(path_follow)
+		path_follow.get_node("RemoteTransform2D").remote_path = get_path()
+	else:
 		can_walk = false
 
 	$AnimatedSprite.play("Idle")
@@ -41,7 +51,7 @@ func _process(delta):
 		
 	
 	if state == State.WALK:
-		self.set_offset(self.get_offset() + speed * delta * move_direction)
+		path_follow.set_offset(path_follow.get_offset() + speed * delta * move_direction)
 		if _reached_destination():
 			_stop_walking()
 		else:
@@ -51,12 +61,12 @@ func _process(delta):
 func _get_destination_offset():
 	var destination = 0
 	if move_direction == 1:
-		destination = self.get_parent().get_curve().get_baked_length()
+		destination = path_follow.get_parent().get_curve().get_baked_length()
 	return destination
 
 
 func _reached_destination():
-	return abs(self.get_offset() - _get_destination_offset()) < 3
+	return abs(path_follow.get_offset() - _get_destination_offset()) < 3
 
 func _update_direction():
 	var diff = global_position - last_position
@@ -94,7 +104,7 @@ func _start_walking():
 	move_direction *= -1
 
 func _stop_walking():
-	self.set_offset(_get_destination_offset())
+	path_follow.set_offset(_get_destination_offset())
 	state = State.IDLE
 	$AnimatedSprite.play("Idle")
 	current_idle = Idle.IDLE
