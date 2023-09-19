@@ -7,7 +7,7 @@
 [ext_resource path="res://animations/Bob.tres" type="SpriteFrames" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.25, 11 )
+extents = Vector2( 7.25, 9 )
 
 [node name="Person" type="PathFollow2D"]
 rotate = false
@@ -27,5 +27,5 @@ animation = "Idle"
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -0.25, 5 )
+position = Vector2( -0.25, 7 )
 shape = SubResource( 1 )

@@ -17,7 +17,7 @@ var current_idle = Idle.IDLE
 var can_walk = true
 var last_position = null
 var direction = Direction.NONE
-var move_direction = -1
+export var move_direction = -1
 
 func _ready():
 	#TODO: move this to the main script

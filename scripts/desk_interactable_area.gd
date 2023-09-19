@@ -37,3 +37,7 @@ func add_item():
 
 	inventory.pop_item()
 	$Order.complete()
+
+
+func _on_complete():
+	pass # Replace with function body.

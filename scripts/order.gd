@@ -39,9 +39,11 @@ func _on_Timer_timeout():
 
 
 func stop_order():
-	current_pile = null
+	current_pile.set_as_failed()
 	is_running = false
 	$Timer.stop()
+	if $PlacementPosition.is_reserved:
+		$PlacementPosition.remove_item()
 
 	if is_easy_order:
 		$Timer.wait_time = easy_order_timer_wait_time
