@@ -16,7 +16,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 116, 179, 0, 0, 0, 0, 196, 178, 0, 0, 0, 0, 196, 54 )
+"points": PoolVector2Array( 0, 0, 0, 0, 114.608, 154.63, 0, 0, 0, 0, 114, 179, 0, 0, 0, 0, 153, 179, 0, 0, 0, 0, 155, 47, 0, 0, 0, 0, 240, 47 )
 }
 
 [node name="Main2" instance=ExtResource( 1 )]
@@ -25,7 +25,7 @@ _data = {
 tile_data = PoolIntArray( 0, 0, 0, 1, 38, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 37, 0, 7, 0, 0, 1703961, 4, 0 )
 
 [node name="OfficeItems" parent="LevelContents" index="2"]
-tile_data = PoolIntArray( 655389, 21, 0, 851997, 13, 0, 1048605, 21, 0, 1114116, 12, 0, 1310746, 12, 0, 1572893, 36, 0, 1900546, 40, 0, 1900562, 4, 0, 1966095, 5, 0, 1966101, 41, 0 )
+tile_data = PoolIntArray( 655389, 21, 0, 720918, 12, 0, 851997, 13, 0, 1048605, 21, 0, 1114116, 12, 0, 1310746, 12, 0, 1572893, 36, 0, 1900546, 40, 0, 1900562, 4, 0, 1966095, 5, 0, 1966101, 41, 0 )
 
 [node name="OnTableItems" type="TileMap" parent="LevelContents" index="3"]
 z_index = 1
@@ -73,4 +73,5 @@ position = Vector2( 50, 59 )
 curve = SubResource( 2 )
 
 [node name="Person" parent="LevelContents/Path2D2" index="0" instance=ExtResource( 2 )]
-position = Vector2( 116, 179 )
+position = Vector2( 176.905, 47 )
+offset = 222.04
