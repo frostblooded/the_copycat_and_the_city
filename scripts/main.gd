@@ -4,7 +4,3 @@ class_name Main
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
-
-
-func _ready():
-	get_tree().paused = true

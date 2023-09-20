@@ -5,6 +5,8 @@ signal pile_taken()
 signal stalled()
 signal unstalled()
 signal pile_added(time)
+signal empty_paper()
+signal refilled()
 
 export var max_paper = 100
 export var current_paper = -1
@@ -68,8 +70,8 @@ func _on_interact():
 
 
 func refill_paper():
-	print("refilled paper")
 	current_paper = max_paper
+	emit_signal("refilled")
 
 func stall():
 	is_stalled = true
@@ -102,6 +104,7 @@ func take_pile(pile):
 	var paper_count = 1
 
 	if current_paper < paper_count:
+		emit_signal("empty_paper")
 		return false
 	
 	inventory.add_child(pile)
