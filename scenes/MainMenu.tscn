@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Level1.tscn" type="PackedScene" id=2]
@@ -12,11 +12,14 @@
 [ext_resource path="res://scenes/PrinterInteractableArea.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/ShredderInteractableArea.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/DeskInteractableArea.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/Level5.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/Persons/Person.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/MandatoryLevelNodes.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scripts/main.gd" type="Script" id=16]
 [ext_resource path="res://sprites/GuttyKreum_JapaneseOfficeInterior_v2/Tilemap/MainTileMap.png" type="Texture" id=17]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/Level4.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/Level3.tscn" type="PackedScene" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -278,6 +281,10 @@ expand = true
 stretch_mode = 1
 
 [node name="QuitGameButton" type="Button" parent="Control"]
+anchor_left = 0.125
+anchor_top = 1.05
+anchor_right = 0.175
+anchor_bottom = 1.05
 margin_left = 83.0
 margin_top = 166.0
 margin_right = 165.0
@@ -311,6 +318,30 @@ margin_right = 184.0
 margin_bottom = 156.0
 text = "Level 2"
 next_level_scene = ExtResource( 9 )
+
+[node name="Level3Button" parent="Control" instance=ExtResource( 7 )]
+margin_left = 32.0
+margin_top = 160.0
+margin_right = 96.0
+margin_bottom = 180.0
+text = "Level 3"
+next_level_scene = ExtResource( 20 )
+
+[node name="Level4Button" parent="Control" instance=ExtResource( 7 )]
+margin_left = 100.0
+margin_top = 160.0
+margin_right = 164.0
+margin_bottom = 180.0
+text = "Level 4"
+next_level_scene = ExtResource( 19 )
+
+[node name="Level5Button" parent="Control" instance=ExtResource( 7 )]
+margin_left = 168.0
+margin_top = 160.0
+margin_right = 228.0
+margin_bottom = 180.0
+text = "Level 5"
+next_level_scene = ExtResource( 13 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
