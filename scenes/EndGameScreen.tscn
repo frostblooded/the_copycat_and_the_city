@@ -19,10 +19,10 @@ color = Color( 0, 0, 0, 0.309804 )
 
 [node name="ScoreLabel" type="Label" parent="."]
 anchor_right = 0.107
-margin_left = 72.0
-margin_top = 72.0
-margin_right = 109.608
-margin_bottom = 86.0
+margin_left = 73.5005
+margin_top = 43.3464
+margin_right = 111.108
+margin_bottom = 57.3464
 rect_scale = Vector2( 1.57524, 1.57524 )
 text = "Score: 70"
 align = 1
@@ -38,9 +38,9 @@ theme = ExtResource( 2 )
 text = "Restart Level"
 
 [node name="MainMenuButton" type="Button" parent="."]
-margin_left = 62.1927
+margin_left = 47.1157
 margin_top = 184.693
-margin_right = 196.193
+margin_right = 211.116
 margin_bottom = 204.693
 theme = ExtResource( 2 )
 text = "Back to Main Menu"
@@ -51,6 +51,25 @@ margin_top = 128.155
 margin_right = 196.193
 margin_bottom = 148.155
 text = "Next Level"
+
+[node name="CongratulatingLabel" type="Label" parent="."]
+margin_left = 20.7309
+margin_top = 90.4621
+margin_right = 168.731
+margin_bottom = 104.462
+rect_scale = Vector2( 1.45935, 1.45935 )
+custom_colors/font_color = Color( 0.141176, 0.760784, 0.105882, 1 )
+text = "Good job!"
+align = 1
+valign = 1
+
+[node name="ScoreGoalLabel" type="Label" parent="."]
+margin_left = 90.4621
+margin_top = 65.9619
+margin_right = 143.462
+margin_bottom = 79.9619
+rect_scale = Vector2( 1.39093, 1.39093 )
+text = "Goal: 50"
 
 [connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]

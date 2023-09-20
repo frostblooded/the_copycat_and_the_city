@@ -4,6 +4,9 @@ class_name GameManager
 var wanted_easier_orders: int = 0
 var successfully_completed_orders_in_a_row: int = 0
 var wanted_harder_orders: int = 0
+onready var mandatory_level_nodes: Node2D = Utils.get_global_node(get_tree(), "MandatoryLevelNodes")
+onready var end_game_screen: Control = Utils.get_global_node(get_tree(), "EndGameScreen")
+onready var score_manager: Node2D = Utils.get_global_node(get_tree(), "ScoreManager")
 
 func _process(_delta):
 	var time_left_label: Label = get_tree().root.find_node("TimeLeftLabel", true, false) as Label
@@ -11,13 +14,22 @@ func _process(_delta):
 
 
 func end_game():
-	var end_game_screen: Control = get_tree().root.find_node("EndGameScreen", true, false)
 	end_game_screen.visible = true
-	end_game_screen.get_node("NextLevelButton").next_level_scene = get_tree().root.find_node("MandatoryLevelNodes", true, false).next_level_scene
-	var score: int = get_tree().root.find_node("ScoreManager", true, false).score
-	end_game_screen.get_node("ScoreLabel").text = "Score: {score}".format({"score": score})
+	end_game_screen.get_node("ScoreLabel").text = "Score: {score}".format({"score": score_manager.score})
+	end_game_screen.get_node("ScoreGoalLabel").text = "Goal: {goal}".format({"goal": mandatory_level_nodes.score_goal})
 	$EndGameAudioPlayer.play()
 	Utils.get_player(get_tree()).queue_free()
+
+	if score_manager.score >= mandatory_level_nodes.score_goal:
+		end_game_screen.get_node("NextLevelButton").visible = true
+		end_game_screen.get_node("NextLevelButton").next_level_scene = mandatory_level_nodes.next_level_scene
+		end_game_screen.get_node("CongratulatingLabel").add_color_override("font_color", Color.green)
+		end_game_screen.get_node("CongratulatingLabel").text = "Good job!"
+	else:
+		end_game_screen.get_node("NextLevelButton").visible = false
+		end_game_screen.get_node("NextLevelButton").next_level_scene = null
+		end_game_screen.get_node("CongratulatingLabel").add_color_override("font_color", Color.red)
+		end_game_screen.get_node("CongratulatingLabel").text = "Better luck next time..."
 
 
 func _on_EndGameTimer_timeout():
