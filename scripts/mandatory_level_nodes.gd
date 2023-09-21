@@ -5,4 +5,4 @@ export var score_goal: int = 50
 
 
 func _ready():
-    randomize()
+	randomize()
