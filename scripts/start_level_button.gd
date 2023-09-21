@@ -7,4 +7,5 @@ func _on_StartLevelButton_pressed():
 	if next_level_scene == null:
 		return
 
+	get_tree().paused = false
 	get_tree().change_scene_to(next_level_scene)

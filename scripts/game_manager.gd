@@ -17,6 +17,7 @@ func _process(_delta):
 
 
 func end_game():
+	get_tree().paused = true
 	end_game_screen.visible = true
 	end_game_screen.get_node("ScoreLabel").text = "Score: {score}".format({"score": score_manager.score})
 	end_game_screen.get_node("ScoreGoalLabel").text = "Goal: {goal}".format({"goal": mandatory_level_nodes.score_goal})
