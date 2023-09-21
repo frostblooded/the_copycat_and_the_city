@@ -6,6 +6,10 @@ var index = -1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dialogs = get_children()
+
+	for dialog in dialogs:
+		dialog.hide()
+
 	if dialogs.size() > 0:
 		get_tree().paused = true
 		show_dialog()

@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Level3.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/PrinterInteractableArea.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/DeskInteractableArea.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/TableInteractableArea.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/dialog_flow.gd" type="Script" id=6]
+[ext_resource path="res://scenes/DialogFlow.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Dialog.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sprites/symbol_2.png" type="Texture" id=9]
 [ext_resource path="res://scenes/ShredderInteractableArea.tscn" type="PackedScene" id=14]
 
 [node name="Main" instance=ExtResource( 1 )]
@@ -36,3 +40,31 @@ position = Vector2( 175, 239 )
 
 [node name="TableInteractableArea" parent="LevelContents" index="10" instance=ExtResource( 5 )]
 position = Vector2( 79, 239 )
+
+[node name="DialogFlow" parent="." index="4" instance=ExtResource( 7 )]
+script = ExtResource( 6 )
+
+[node name="Control" parent="DialogFlow" index="0" instance=ExtResource( 8 )]
+pause_mode = 2
+offset = Vector2( 27, 150 )
+transform = Transform2D( 1, 0, 0, 1, 27, 150 )
+text = "We hired more people today!"
+
+[node name="Control2" parent="DialogFlow" index="1" instance=ExtResource( 8 )]
+pause_mode = 2
+offset = Vector2( 27, 150 )
+transform = Transform2D( 1, 0, 0, 1, 27, 150 )
+text = "More work! How exciting!"
+
+[node name="Control3" parent="DialogFlow" index="2" instance=ExtResource( 8 )]
+pause_mode = 2
+offset = Vector2( 27, 150 )
+transform = Transform2D( 1, 0, 0, 1, 27, 150 )
+text = "..."
+
+[node name="Control4" parent="DialogFlow" index="3" instance=ExtResource( 8 )]
+pause_mode = 2
+offset = Vector2( 27, 150 )
+transform = Transform2D( 1, 0, 0, 1, 27, 150 )
+text = "Why are you not excited?"
+image = ExtResource( 9 )

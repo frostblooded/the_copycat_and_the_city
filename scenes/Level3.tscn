@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/PrinterInteractableArea.tscn" type="PackedScene" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://scenes/DeskInteractableArea.tscn" type="PackedScene" id=6]
 [ext_resource path="res://tiles/LevelTileset.tres" type="TileSet" id=7]
 [ext_resource path="res://scenes/Level4.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scripts/dialog_flow.gd" type="Script" id=9]
+[ext_resource path="res://scenes/DialogFlow.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Dialog.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -67,3 +70,24 @@ curve = SubResource( 2 )
 [node name="Person2" parent="LevelContents" index="14" instance=ExtResource( 5 )]
 position = Vector2( 223, 203 )
 path_node = NodePath("../Path2D2")
+
+[node name="DialogFlow" parent="." index="4" instance=ExtResource( 10 )]
+script = ExtResource( 9 )
+
+[node name="Control" parent="DialogFlow" index="0" instance=ExtResource( 11 )]
+pause_mode = 2
+offset = Vector2( 27, 150 )
+transform = Transform2D( 1, 0, 0, 1, 27, 150 )
+text = "I love kids!"
+
+[node name="Control2" parent="DialogFlow" index="1" instance=ExtResource( 11 )]
+pause_mode = 2
+offset = Vector2( 27, 150 )
+transform = Transform2D( 1, 0, 0, 1, 27, 150 )
+text = "I like to have my kids come to the office."
+
+[node name="Control3" parent="DialogFlow" index="2" instance=ExtResource( 11 )]
+pause_mode = 2
+offset = Vector2( 27, 150 )
+transform = Transform2D( 1, 0, 0, 1, 27, 150 )
+text = "It shouldn't be a problem for you."
