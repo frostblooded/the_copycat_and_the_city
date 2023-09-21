@@ -72,6 +72,7 @@ func _on_interact():
 func refill_paper():
 	current_paper = max_paper
 	emit_signal("refilled")
+	$RefillAudioPlayer.play()
 
 func stall():
 	is_stalled = true

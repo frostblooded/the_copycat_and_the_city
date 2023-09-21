@@ -11,5 +11,5 @@ dest_files=[ "res://.import/refill-printer.mp3-bb05797dcda7979975de32235a983f68.
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
