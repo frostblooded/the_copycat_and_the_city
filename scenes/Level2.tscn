@@ -11,6 +11,7 @@
 
 [node name="MandatoryLevelNodes" parent="." index="0"]
 next_level_scene = ExtResource( 2 )
+timer = 40.0
 
 [node name="OfficeItems" parent="LevelContents" index="2"]
 tile_data = PoolIntArray( 262160, 4, 0, 327685, 6, 0, 1179655, 7, 0, 1638429, 5, 0 )

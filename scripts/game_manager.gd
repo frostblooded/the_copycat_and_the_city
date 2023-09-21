@@ -8,6 +8,9 @@ onready var mandatory_level_nodes: Node2D = Utils.get_global_node(get_tree(), "M
 onready var end_game_screen: Control = Utils.get_global_node(get_tree(), "EndGameScreen")
 onready var score_manager: Node2D = Utils.get_global_node(get_tree(), "ScoreManager")
 
+func _ready():
+	$EndGameTimer.start(mandatory_level_nodes.timer)
+
 func _process(_delta):
 	var time_left_label: Label = get_tree().root.find_node("TimeLeftLabel", true, false) as Label
 	time_left_label.text = "Time left: {time}".format({"time": $EndGameTimer.time_left as int})
