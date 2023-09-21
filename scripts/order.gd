@@ -42,6 +42,7 @@ func start():
 
 func _on_Timer_timeout():
 	current_pile.set_as_failed()
+	$FailedOrderAudioPlayer.play()
 	game_manager.wanted_easier_orders += 1
 	game_manager.successfully_completed_orders_in_a_row = 0
 	stop_order()

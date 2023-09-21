@@ -23,6 +23,7 @@ _data = {
 
 [node name="MandatoryLevelNodes" parent="." index="0"]
 next_level_scene = ExtResource( 8 )
+score_goal = 60
 
 [node name="OfficeItems" parent="LevelContents" index="2"]
 tile_data = PoolIntArray( 262173, 5, 0, 720898, 13, 0, 720907, 12, 0, 786442, 12, 0, 786444, 12, 0, 851995, 11, 0, 917521, 12, 0, 1376258, 9, 0, 1900570, 24, 0 )

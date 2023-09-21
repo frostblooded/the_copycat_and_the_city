@@ -18,4 +18,3 @@ func set_as_failed():
 	is_failed = true
 	$CopiedUI.visible = false
 	$FailedUI.visible = true
-	$FailedOrderAudioPlayer.play()

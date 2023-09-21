@@ -54,9 +54,9 @@ text = "Next Level"
 
 [node name="CongratulatingLabel" type="Label" parent="."]
 margin_left = 20.7309
-margin_top = 90.4621
+margin_top = 98.0006
 margin_right = 168.731
-margin_bottom = 104.462
+margin_bottom = 112.001
 rect_scale = Vector2( 1.45935, 1.45935 )
 custom_colors/font_color = Color( 0.141176, 0.760784, 0.105882, 1 )
 text = "Good job!"

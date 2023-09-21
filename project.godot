@@ -44,7 +44,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/main.gd"
 }, {
-"base": "Node2D",
+"base": "Main",
 "class": "MainMenu",
 "language": "GDScript",
 "path": "res://scripts/main_menu.gd"

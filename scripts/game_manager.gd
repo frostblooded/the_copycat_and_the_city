@@ -32,7 +32,7 @@ func end_game():
 		$FailLevelStreamPlayer.play()
 		end_game_screen.get_node("NextLevelButton").visible = false
 		end_game_screen.get_node("NextLevelButton").next_level_scene = null
-		end_game_screen.get_node("CongratulatingLabel").add_color_override("font_color", Color.red)
+		end_game_screen.get_node("CongratulatingLabel").add_color_override("font_color", Color.black)
 		end_game_screen.get_node("CongratulatingLabel").text = "Better luck next time..."
 
 
