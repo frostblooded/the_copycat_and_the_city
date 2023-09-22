@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/PrinterInteractableArea.tscn" type="PackedScene" id=2]
@@ -22,11 +22,17 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 225, 203, 0, 0, 0, 0, 143, 203, 0, 0, 0, 0, 143, 138, 0, 0, 0, 0, 38, 138 )
 }
 
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 18, 58, 0, 0, 0, 0, 106, 58 )
+}
+
 [node name="Level3" instance=ExtResource( 1 )]
 
 [node name="MandatoryLevelNodes" parent="." index="0"]
 next_level_scene = ExtResource( 8 )
 score_goal = 60
+timer = 60.0
 
 [node name="OfficeItems" parent="LevelContents" index="2"]
 tile_data = PoolIntArray( 262173, 5, 0, 720898, 13, 0, 720907, 12, 0, 786442, 12, 0, 786444, 12, 0, 851995, 11, 0, 917521, 12, 0, 1376258, 9, 0, 1900570, 24, 0 )
@@ -46,7 +52,7 @@ position = Vector2( 20, 209 )
 curve = SubResource( 1 )
 
 [node name="Person" parent="LevelContents" index="7" instance=ExtResource( 5 )]
-position = Vector2( 35, 72 )
+position = Vector2( 138, 71 )
 path_node = NodePath("../Path2D")
 
 [node name="PrinterInteractableArea" parent="LevelContents" index="8" instance=ExtResource( 2 )]
@@ -68,8 +74,23 @@ position = Vector2( 208, 136 )
 curve = SubResource( 2 )
 
 [node name="Person2" parent="LevelContents" index="14" instance=ExtResource( 5 )]
-position = Vector2( 223, 203 )
+position = Vector2( 143, 138 )
 path_node = NodePath("../Path2D2")
+
+[node name="Path2D3" type="Path2D" parent="LevelContents" index="15"]
+curve = SubResource( 3 )
+
+[node name="Person3" parent="LevelContents" index="16" instance=ExtResource( 5 )]
+position = Vector2( 18, 60 )
+path_node = NodePath("../Path2D3")
+
+[node name="Path2D4" type="Path2D" parent="LevelContents" index="17"]
+position = Vector2( 18, 107 )
+curve = SubResource( 1 )
+
+[node name="Person4" parent="LevelContents" index="18" instance=ExtResource( 5 )]
+position = Vector2( 152, 179 )
+path_node = NodePath("../Path2D4")
 
 [node name="DialogFlow" parent="." index="4" instance=ExtResource( 10 )]
 script = ExtResource( 9 )

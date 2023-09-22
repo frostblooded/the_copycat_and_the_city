@@ -11,5 +11,5 @@ dest_files=[ "res://.import/water-dispenser.mp3-531e2cbe7153f3300251b7afcd524ee4
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
