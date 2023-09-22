@@ -34,7 +34,7 @@ score_goal = 70
 tile_data = PoolIntArray( 0, 0, 0, 1, 38, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 37, 0, 7, 0, 0, 1703961, 4, 0 )
 
 [node name="OfficeItems" parent="LevelContents" index="2"]
-tile_data = PoolIntArray( 655389, 21, 0, 720918, 12, 0, 851997, 13, 0, 1048605, 21, 0, 1114116, 12, 0, 1310745, 12, 0, 1572893, 36, 0, 1835017, 11, 0, 1900546, 40, 0, 1900562, 4, 0, 1966095, 5, 0, 1966101, 41, 0 )
+tile_data = PoolIntArray( 655389, 21, 0, 720918, 12, 0, 851979, 12, 0, 851997, 13, 0, 1048605, 21, 0, 1114114, 12, 0, 1310745, 12, 0, 1572893, 36, 0, 1835017, 11, 0, 1900546, 40, 0, 1900562, 4, 0, 1966095, 5, 0, 1966101, 41, 0 )
 
 [node name="OnTableItems" type="TileMap" parent="LevelContents" index="3"]
 z_index = 1
@@ -56,7 +56,7 @@ tile_data = PoolIntArray( 393223, 10, 0, 458774, 10, 0, 786447, 10, 0, 917528, 1
 position = Vector2( 227, 232 )
 
 [node name="PrinterInteractableArea" parent="LevelContents" index="7" instance=ExtResource( 6 )]
-position = Vector2( 176, 31 )
+position = Vector2( 117, 31 )
 max_paper = 3
 unstall_chance_per_interact = 0.4
 can_stall = true
@@ -65,7 +65,7 @@ can_stall = true
 position = Vector2( 216, 31 )
 
 [node name="TableInteractableArea" parent="LevelContents" index="9" instance=ExtResource( 5 )]
-position = Vector2( 112, 31 )
+position = Vector2( 171, 31 )
 
 [node name="DeskInteractableArea" parent="LevelContents" index="10" instance=ExtResource( 7 )]
 position = Vector2( 72, 176 )
