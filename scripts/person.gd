@@ -6,7 +6,7 @@ enum Direction { LEFT, RIGHT, UP, DOWN, NONE }
 
 export var phone_chance = 0.01
 export var walk_chance = 0.01
-export var walk_cooldown = 1
+export var walk_cooldown = 1.0
 export var speed = 10
 export var path_follow_scene: PackedScene
 export(NodePath) var path_node
@@ -91,12 +91,16 @@ func _update_direction():
 		direction = new_direction
 		if direction == Direction.RIGHT:
 			$AnimatedSprite.play("Right")
+			$AnimatedSprite.speed_scale = 2
 		elif direction == Direction.LEFT:
 			$AnimatedSprite.play("Left")
+			$AnimatedSprite.speed_scale = 2
 		elif direction == Direction.UP:
 			$AnimatedSprite.play("Back")
+			$AnimatedSprite.speed_scale = 2
 		elif direction == Direction.DOWN:
 			$AnimatedSprite.play("Front")
+			$AnimatedSprite.speed_scale = 2
 	
 
 func _start_walking():
@@ -108,6 +112,7 @@ func _start_walking():
 func _stop_walking():
 	path_follow.set_offset(_get_destination_offset())
 	state = State.IDLE
+	$AnimatedSprite.speed_scale = 1
 	$AnimatedSprite.play("Idle")
 	current_idle = Idle.IDLE
 	can_walk = false

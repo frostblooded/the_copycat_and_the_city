@@ -14,7 +14,7 @@
 [ext_resource path="res://sounds/refill-printer.mp3" type="AudioStream" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12.25, 23.5 )
+extents = Vector2( 20.5, 23.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 12.5, 13.5 )
@@ -61,6 +61,7 @@ unstall_chance_per_interact = 0.3
 can_stall = false
 
 [node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( -0.5, 0 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]

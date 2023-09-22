@@ -40,7 +40,7 @@ position = Vector2( 128, 239 )
 position = Vector2( 175, 239 )
 
 [node name="TableInteractableArea" parent="LevelContents" index="10" instance=ExtResource( 5 )]
-position = Vector2( 79, 239 )
+position = Vector2( 75, 239 )
 
 [node name="DialogFlow" parent="." index="4" instance=ExtResource( 7 )]
 script = ExtResource( 6 )
