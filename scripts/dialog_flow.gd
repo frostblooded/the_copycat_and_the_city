@@ -2,9 +2,14 @@ extends CanvasLayer
 
 var dialogs = []
 var index = -1
+var started: bool = false
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _process(_delta):
+	if started:
+		return
+
+	started = true
 	dialogs = get_children()
 
 	for dialog in dialogs:
