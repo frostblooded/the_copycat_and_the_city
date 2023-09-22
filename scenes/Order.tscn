@@ -18,15 +18,15 @@ wait_time = 25.0
 scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 2 )
 
-[node name="OrderStartedAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="OrderStartedAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -5.0
 
-[node name="OrderCompletedAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="OrderCompletedAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 volume_db = -5.0
 
-[node name="FailedOrderAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="FailedOrderAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
