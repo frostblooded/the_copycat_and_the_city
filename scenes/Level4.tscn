@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/PrinterInteractableArea.tscn" type="PackedScene" id=2]
@@ -11,12 +11,11 @@
 [ext_resource path="res://scripts/dialog_flow.gd" type="Script" id=9]
 [ext_resource path="res://scenes/DialogFlow.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Dialog.tscn" type="PackedScene" id=11]
-[ext_resource path="res://sprites/boss.png" type="Texture" id=12]
 [ext_resource path="res://scenes/WaterBottle.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 43, 71, 0, 0, 0, 0, 104, 71, 0, 0, 0, 0, 104, 175, 0, 0, 0, 0, 32, 175, 0, 0, 0, 0, 33, 229, 0, 0, 0, 0, 168, 229, 0, 0, 0, 0, 170, 82 )
+"points": PoolVector2Array( 0, 0, 0, 0, 168, 229, 0, 0, 0, 0, 170, 82 )
 }
 
 [sub_resource type="Curve2D" id=2]
@@ -40,7 +39,7 @@ _data = {
 next_level_scene = ExtResource( 8 )
 
 [node name="PrinterInteractableArea" parent="LevelContents" index="0" instance=ExtResource( 2 )]
-position = Vector2( 76, 31 )
+position = Vector2( 72, 40 )
 can_stall = true
 
 [node name="BackWall" parent="LevelContents" index="1"]
@@ -122,7 +121,6 @@ visible = false
 offset = Vector2( 27, 150 )
 transform = Transform2D( 1, 0, 0, 1, 27, 150 )
 text = "Be careful, the printer started jamming."
-image = ExtResource( 12 )
 
 [node name="Control2" parent="DialogFlow" index="1" instance=ExtResource( 11 )]
 pause_mode = 2
@@ -130,7 +128,6 @@ visible = false
 offset = Vector2( 27, 150 )
 transform = Transform2D( 1, 0, 0, 1, 27, 150 )
 text = "We could call a technician... or maybe..."
-image = ExtResource( 12 )
 
 [node name="Control3" parent="DialogFlow" index="2" instance=ExtResource( 11 )]
 pause_mode = 2
@@ -138,4 +135,3 @@ visible = false
 offset = Vector2( 27, 150 )
 transform = Transform2D( 1, 0, 0, 1, 27, 150 )
 text = "you can just hit it a couple times when it jams."
-image = ExtResource( 12 )
