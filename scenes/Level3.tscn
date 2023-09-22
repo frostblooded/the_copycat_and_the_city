@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/PrinterInteractableArea.tscn" type="PackedScene" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://scripts/dialog_flow.gd" type="Script" id=9]
 [ext_resource path="res://scenes/DialogFlow.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Dialog.tscn" type="PackedScene" id=11]
-[ext_resource path="res://sprites/boss.png" type="Texture" id=12]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -80,18 +79,27 @@ pause_mode = 2
 offset = Vector2( 27, 150 )
 transform = Transform2D( 1, 0, 0, 1, 27, 150 )
 text = "I love kids!"
-image = ExtResource( 12 )
 
 [node name="Control2" parent="DialogFlow" index="1" instance=ExtResource( 11 )]
 pause_mode = 2
 offset = Vector2( 27, 150 )
 transform = Transform2D( 1, 0, 0, 1, 27, 150 )
 text = "I like to have my kids come to the office."
-image = ExtResource( 12 )
 
 [node name="Control3" parent="DialogFlow" index="2" instance=ExtResource( 11 )]
 pause_mode = 2
 offset = Vector2( 27, 150 )
 transform = Transform2D( 1, 0, 0, 1, 27, 150 )
 text = "It shouldn't be a problem for you."
-image = ExtResource( 12 )
+
+[node name="Control4" parent="DialogFlow" index="3" instance=ExtResource( 11 )]
+pause_mode = 2
+offset = Vector2( 27, 150 )
+transform = Transform2D( 1, 0, 0, 1, 27, 150 )
+text = "If you have too many orders,"
+
+[node name="Control5" parent="DialogFlow" index="4" instance=ExtResource( 11 )]
+pause_mode = 2
+offset = Vector2( 27, 150 )
+transform = Transform2D( 1, 0, 0, 1, 27, 150 )
+text = "try picking up many at the same time."

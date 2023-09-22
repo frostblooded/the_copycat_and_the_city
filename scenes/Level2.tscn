@@ -9,7 +9,7 @@
 [ext_resource path="res://scenes/DialogFlow.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Dialog.tscn" type="PackedScene" id=8]
 [ext_resource path="res://sprites/symbol_2.png" type="Texture" id=9]
-[ext_resource path="res://sprites/boss.png" type="Texture" id=10]
+[ext_resource path="res://sprites/table.png" type="Texture" id=11]
 [ext_resource path="res://scenes/ShredderInteractableArea.tscn" type="PackedScene" id=14]
 
 [node name="Main" instance=ExtResource( 1 )]
@@ -50,21 +50,18 @@ pause_mode = 2
 offset = Vector2( 27, 150 )
 transform = Transform2D( 1, 0, 0, 1, 27, 150 )
 text = "We hired more people today!"
-image = ExtResource( 10 )
 
 [node name="Control2" parent="DialogFlow" index="1" instance=ExtResource( 8 )]
 pause_mode = 2
 offset = Vector2( 27, 150 )
 transform = Transform2D( 1, 0, 0, 1, 27, 150 )
 text = "More work! How exciting!"
-image = ExtResource( 10 )
 
 [node name="Control3" parent="DialogFlow" index="2" instance=ExtResource( 8 )]
 pause_mode = 2
 offset = Vector2( 27, 150 )
 transform = Transform2D( 1, 0, 0, 1, 27, 150 )
 text = "..."
-image = ExtResource( 10 )
 
 [node name="Control4" parent="DialogFlow" index="3" instance=ExtResource( 8 )]
 pause_mode = 2
@@ -72,3 +69,22 @@ offset = Vector2( 27, 150 )
 transform = Transform2D( 1, 0, 0, 1, 27, 150 )
 text = "Why are you not excited?"
 image = ExtResource( 9 )
+
+[node name="Control5" parent="DialogFlow" index="4" instance=ExtResource( 8 )]
+pause_mode = 2
+offset = Vector2( 27, 150 )
+transform = Transform2D( 1, 0, 0, 1, 27, 150 )
+text = "Also, now we have budget for tables."
+image = ExtResource( 11 )
+
+[node name="Control6" parent="DialogFlow" index="5" instance=ExtResource( 8 )]
+pause_mode = 2
+offset = Vector2( 27, 150 )
+transform = Transform2D( 1, 0, 0, 1, 27, 150 )
+text = "You can put stuff on them..."
+
+[node name="Control7" parent="DialogFlow" index="6" instance=ExtResource( 8 )]
+pause_mode = 2
+offset = Vector2( 27, 150 )
+transform = Transform2D( 1, 0, 0, 1, 27, 150 )
+text = "I guess you know how a table works"
