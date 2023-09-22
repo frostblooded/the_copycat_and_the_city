@@ -18,7 +18,7 @@
 position = Vector2( 0, -1 )
 next_level_scene = ExtResource( 2 )
 score_goal = 30
-timer = 45.0
+timer = 2.0
 
 [node name="OfficeItems" parent="LevelContents" index="2"]
 tile_data = PoolIntArray( 327703, 6, 0, 917526, 8, 0, 1179670, 7, 0, 1245187, 9, 0, 1966103, 4, 0 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/no-paper-printer.mp3-a45efcf3b15e882255ab76c7fc0ca8fa.mp3str"
+
+[deps]
+
+source_file="res://sounds/no-paper-printer.mp3"
+dest_files=[ "res://.import/no-paper-printer.mp3-a45efcf3b15e882255ab76c7fc0ca8fa.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
