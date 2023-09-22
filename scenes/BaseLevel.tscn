@@ -57,9 +57,13 @@ position = Vector2( 0, 1 )
 stream = ExtResource( 4 )
 volume_db = -10.0
 autoplay = true
+area_mask = 0
 
 [node name="AmbienceAudioPlayer" type="AudioStreamPlayer2D" parent="Music"]
 position = Vector2( 0, 1 )
 stream = ExtResource( 5 )
 volume_db = -5.0
 autoplay = true
+
+[node name="Listener2D" type="Listener2D" parent="Music"]
+current = true

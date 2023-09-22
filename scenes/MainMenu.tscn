@@ -347,4 +347,7 @@ next_level_scene = ExtResource( 13 )
 stream = ExtResource( 3 )
 autoplay = true
 
+[node name="Listener2D" type="Listener2D" parent="."]
+current = true
+
 [connection signal="pressed" from="Control/QuitGameButton" to="." method="_on_QuitGameButton_pressed"]

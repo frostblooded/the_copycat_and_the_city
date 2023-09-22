@@ -35,6 +35,9 @@ position = Vector2( 80, 239 )
 [node name="ShredderInteractableArea" parent="LevelContents" index="7" instance=ExtResource( 14 )]
 position = Vector2( 120, 239 )
 
+[node name="Listener2D" parent="Music" index="2"]
+current = false
+
 [node name="DialogFlow" parent="." index="4" instance=ExtResource( 7 )]
 script = ExtResource( 6 )
 
