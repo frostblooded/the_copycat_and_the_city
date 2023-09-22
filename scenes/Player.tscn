@@ -116,7 +116,6 @@ margin_left = 11.0
 margin_top = -11.0
 margin_right = 89.0
 margin_bottom = 61.0
-rect_scale = Vector2( 0.144818, 0.144818 )
 texture = ExtResource( 4 )
 
 [node name="Inventory" type="Node2D" parent="."]
