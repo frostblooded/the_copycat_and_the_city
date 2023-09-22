@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://sprites/boss.jpg" type="Texture" id=1]
 [ext_resource path="res://fonts/PocoDialog.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scripts/dialog.gd" type="Script" id=3]
 [ext_resource path="res://sprites/interact_ui.png" type="Texture" id=4]
+[ext_resource path="res://sprites/boss.png" type="Texture" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.121569, 0.121569, 0.121569, 1 )
@@ -45,17 +46,18 @@ margin_left = 4.0
 margin_top = 4.0
 margin_right = 196.0
 margin_bottom = 60.0
+custom_constants/margin_right = 11
 custom_constants/margin_left = 4
 
 [node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/MarginContainer/MarginContainer"]
 margin_left = 4.0
-margin_right = 192.0
+margin_right = 181.0
 margin_bottom = 56.0
 split_offset = 100
 
 [node name="Label" type="Label" parent="MarginContainer/MarginContainer/MarginContainer/HSplitContainer"]
 margin_top = 22.0
-margin_right = 126.0
+margin_right = 125.0
 margin_bottom = 34.0
 rect_min_size = Vector2( 125, 0 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -64,10 +66,10 @@ text = "*BRRR*"
 autowrap = true
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/MarginContainer/HSplitContainer"]
-margin_left = 138.0
-margin_right = 188.0
+margin_left = 137.0
+margin_right = 177.0
 margin_bottom = 56.0
-texture = ExtResource( 1 )
+texture = ExtResource( 5 )
 stretch_mode = 4
 
 [node name="TextureRect" type="TextureRect" parent="."]
