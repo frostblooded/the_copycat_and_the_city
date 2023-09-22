@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/game_manager.gd" type="Script" id=1]
 [ext_resource path="res://sounds/complete_level.mp3" type="AudioStream" id=2]
-[ext_resource path="res://sounds/failed-level.mp3" type="AudioStream" id=3]
+[ext_resource path="res://sounds/funny-meow.mp3" type="AudioStream" id=3]
 
 [node name="GameManager" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,6 +20,6 @@ volume_db = -5.0
 [node name="FailLevelStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 3 )
-volume_db = -15.0
+volume_db = 3.0
 
 [connection signal="timeout" from="EndGameTimer" to="." method="_on_EndGameTimer_timeout"]

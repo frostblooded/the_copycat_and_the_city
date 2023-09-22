@@ -39,12 +39,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/inventory.gd"
 }, {
-"base": "Node2D",
-"class": "Main",
-"language": "GDScript",
-"path": "res://scripts/main.gd"
-}, {
-"base": "Node2D",
+"base": "Main",
 "class": "MainMenu",
 "language": "GDScript",
 "path": "res://scripts/main_menu.gd"
@@ -86,7 +81,6 @@ _global_script_class_icons={
 "GameManager": "",
 "InteractableArea": "",
 "Inventory": "",
-"Main": "",
 "MainMenu": "",
 "Order": "",
 "Pile": "",
