@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/Level1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sounds/office_ambience.mp3" type="AudioStream" id=3]
 [ext_resource path="res://sprites/menu_background.jpg" type="Texture" id=4]
 [ext_resource path="res://sprites/title.png" type="Texture" id=5]
-[ext_resource path="res://UITheme.tres" type="Theme" id=6]
 [ext_resource path="res://scenes/StartLevelButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Level2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/Level5.tscn" type="PackedScene" id=13]
@@ -31,21 +30,6 @@ margin_bottom = 256.0
 texture = ExtResource( 4 )
 expand = true
 stretch_mode = 1
-
-[node name="QuitGameButton" type="Button" parent="Control"]
-anchor_left = 0.125
-anchor_top = 1.05
-anchor_right = 0.175
-anchor_bottom = 1.05
-margin_left = 83.0
-margin_top = 166.0
-margin_right = 171.0
-margin_bottom = 186.0
-theme = ExtResource( 6 )
-text = "Quit Game"
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="Title" type="TextureRect" parent="Control"]
 margin_left = 24.0
@@ -98,5 +82,3 @@ next_level_scene = ExtResource( 13 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
-
-[connection signal="pressed" from="Control/QuitGameButton" to="." method="_on_QuitGameButton_pressed"]

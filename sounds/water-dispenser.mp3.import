@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/water-dispenser.mp3-531e2cbe7153f3300251b7afcd524ee4.mp3str"
+
+[deps]
+
+source_file="res://sounds/water-dispenser.mp3"
+dest_files=[ "res://.import/water-dispenser.mp3-531e2cbe7153f3300251b7afcd524ee4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
