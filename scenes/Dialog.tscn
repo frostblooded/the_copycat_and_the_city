@@ -54,6 +54,7 @@ margin_left = 4.0
 margin_right = 181.0
 margin_bottom = 56.0
 split_offset = 100
+collapsed = true
 
 [node name="Label" type="Label" parent="MarginContainer/MarginContainer/MarginContainer/HSplitContainer"]
 margin_top = 22.0
