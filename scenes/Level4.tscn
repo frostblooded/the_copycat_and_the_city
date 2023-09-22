@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/PrinterInteractableArea.tscn" type="PackedScene" id=2]
@@ -12,10 +12,11 @@
 [ext_resource path="res://scenes/DialogFlow.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Dialog.tscn" type="PackedScene" id=11]
 [ext_resource path="res://sprites/boss.png" type="Texture" id=12]
+[ext_resource path="res://scenes/WaterBottle.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 170, 230, 0, 0, 0, 0, 170, 82 )
+"points": PoolVector2Array( 0, 0, 0, 0, 43, 71, 0, 0, 0, 0, 104, 71, 0, 0, 0, 0, 104, 175, 0, 0, 0, 0, 32, 175, 0, 0, 0, 0, 33, 229, 0, 0, 0, 0, 168, 229, 0, 0, 0, 0, 170, 82 )
 }
 
 [sub_resource type="Curve2D" id=2]
@@ -54,7 +55,7 @@ tile_set = ExtResource( 7 )
 cell_size = Vector2( 8, 8 )
 centered_textures = true
 format = 1
-tile_data = PoolIntArray( 1769498, 22, 0, 1900546, 4, 0, 1900567, 23, 0, 2621495, 23, 0 )
+tile_data = PoolIntArray( 1769498, 22, 0, 1900567, 23, 0, 2621495, 23, 0 )
 
 [node name="OnTheFloorItems" type="TileMap" parent="LevelContents" index="5"]
 tile_set = ExtResource( 7 )
@@ -87,24 +88,27 @@ speed = 40
 path_node = NodePath("../Path2D")
 move_direction = 1
 
-[node name="Path2D2" type="Path2D" parent="LevelContents" index="14"]
+[node name="WaterBottle" parent="LevelContents" index="14" instance=ExtResource( 13 )]
+position = Vector2( 22, 229 )
+
+[node name="Path2D2" type="Path2D" parent="LevelContents" index="15"]
 curve = SubResource( 2 )
 
-[node name="Person2" parent="LevelContents" index="15" instance=ExtResource( 3 )]
+[node name="Person2" parent="LevelContents" index="16" instance=ExtResource( 3 )]
 position = Vector2( 31, 63 )
 path_node = NodePath("../Path2D2")
 
-[node name="Path2D3" type="Path2D" parent="LevelContents" index="16"]
+[node name="Path2D3" type="Path2D" parent="LevelContents" index="17"]
 curve = SubResource( 3 )
 
-[node name="Person3" parent="LevelContents" index="17" instance=ExtResource( 3 )]
+[node name="Person3" parent="LevelContents" index="18" instance=ExtResource( 3 )]
 position = Vector2( 86, 97 )
 path_node = NodePath("../Path2D3")
 
-[node name="Path2D4" type="Path2D" parent="LevelContents" index="18"]
+[node name="Path2D4" type="Path2D" parent="LevelContents" index="19"]
 curve = SubResource( 4 )
 
-[node name="Person4" parent="LevelContents" index="19" instance=ExtResource( 3 )]
+[node name="Person4" parent="LevelContents" index="20" instance=ExtResource( 3 )]
 position = Vector2( 40, 225 )
 path_node = NodePath("../Path2D4")
 
