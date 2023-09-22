@@ -10,7 +10,6 @@ export var walk_cooldown = 1.0
 export var speed = 10
 export var path_follow_scene: PackedScene
 export(NodePath) var path_node
-export(Array, SpriteFrames) var people
 
 var path_follow: PathFollow2D = null
 
@@ -22,11 +21,9 @@ var can_walk = true
 var last_position = null
 var direction = Direction.NONE
 export var move_direction = -1
+onready var mandatory_level_nodes: Node2D = Utils.get_global_node(get_tree(), "MandatoryLevelNodes")
 
 func _ready():
-	#TODO: move this to the main script
-	randomize()
-
 	var path = get_node(path_node)
 	if path != null:
 		can_walk = true
@@ -39,7 +36,7 @@ func _ready():
 		can_walk = false
 
 	$AnimatedSprite.play("Idle")
-	$AnimatedSprite.frames = people[randi() % people.size()]
+	$AnimatedSprite.frames = mandatory_level_nodes.get_random_person_sprites()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
