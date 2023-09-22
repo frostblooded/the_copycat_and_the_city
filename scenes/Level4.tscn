@@ -46,7 +46,7 @@ can_stall = true
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 38, 0, 7, 0, 0, 1703961, 4, 0 )
 
 [node name="OfficeItems" parent="LevelContents" index="3"]
-tile_data = PoolIntArray( 458753, 35, 0, 458781, 36, 0, 917510, 8, 0, 1048594, 12, 0, 1245210, 11, 0, 1769483, 12, 0, 1900569, 24, 0 )
+tile_data = PoolIntArray( 458753, 35, 0, 458781, 36, 0, 917510, 8, 0, 1048594, 12, 0, 1245210, 11, 0, 1900569, 24, 0 )
 
 [node name="OnTableItems" type="TileMap" parent="LevelContents" index="4"]
 z_index = 1
@@ -61,7 +61,7 @@ tile_set = ExtResource( 7 )
 cell_size = Vector2( 8, 8 )
 centered_textures = true
 format = 1
-tile_data = PoolIntArray( 327704, 10, 0, 589829, 10, 0, 786447, 10, 0, 917528, 10, 0, 1572868, 10, 0, 1572879, 10, 0 )
+tile_data = PoolIntArray( 327704, 10, 0, 589829, 10, 0, 786447, 10, 0, 917528, 10, 0, 1572868, 10, 0, 1572879, 10, 0, 1703947, 12, 0, 1900552, 10, 0, 1900558, 10, 0 )
 
 [node name="Player" parent="LevelContents" index="6"]
 position = Vector2( 232, 87 )
