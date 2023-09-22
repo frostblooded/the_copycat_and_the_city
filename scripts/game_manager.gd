@@ -25,7 +25,7 @@ func end_game():
 
 	if score_manager.score >= mandatory_level_nodes.score_goal:
 		$CompleteLevelGameAudioPlayer.play()
-		end_game_screen.get_node("NextLevelButton").visible = true
+		end_game_screen.get_node("NextLevelButton").visible = mandatory_level_nodes.next_level_scene != null
 		end_game_screen.get_node("NextLevelButton").next_level_scene = mandatory_level_nodes.next_level_scene
 		end_game_screen.get_node("CongratulatingLabel").add_color_override("font_color", Color.green)
 		end_game_screen.get_node("CongratulatingLabel").text = "Good job!"

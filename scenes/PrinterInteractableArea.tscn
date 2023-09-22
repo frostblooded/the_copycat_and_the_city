@@ -92,7 +92,7 @@ margin_top = -8.0
 margin_right = 8.0
 margin_bottom = 8.0
 
-[node name="PrinterWorkingAudioPlayer" type="AudioStreamPlayer2D" parent="." index="7"]
+[node name="PrinterWorkingAudioPlayer" type="AudioStreamPlayer" parent="." index="7"]
 stream = ExtResource( 6 )
 volume_db = 5.0
 
@@ -118,11 +118,11 @@ margin_bottom = 36.0
 rect_scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 11 )
 
-[node name="UnstallTryAudioPlayer" type="AudioStreamPlayer2D" parent="." index="11"]
+[node name="UnstallTryAudioPlayer" type="AudioStreamPlayer" parent="." index="11"]
 stream = ExtResource( 9 )
 volume_db = 7.0
 
-[node name="StallAudioPlayer" type="AudioStreamPlayer2D" parent="." index="12"]
+[node name="StallAudioPlayer" type="AudioStreamPlayer" parent="." index="12"]
 stream = ExtResource( 10 )
 
 [node name="RefillAudioPlayer" type="AudioStreamPlayer" parent="." index="13"]

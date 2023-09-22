@@ -12,7 +12,7 @@ wait_time = 60.0
 one_shot = true
 autostart = true
 
-[node name="CompleteLevelGameAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="CompleteLevelGameAudioPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 2 )
 volume_db = -5.0
